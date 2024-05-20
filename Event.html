@@ -227,7 +227,7 @@
 
     
     #shareBtn {
-        display: none;
+        /* display: none; */
         background-color: var(--orange);
     }
 
@@ -496,7 +496,11 @@
 
 
             document.getElementById('shareBtn').onclick = function() {
-                alert("Share");
+                // alert("Share");
+                const currentUrl = window.location.href;
+                // const whatsappShareUrl = 'https://wa.me/?text=' + currentUrl;
+                const whatsappShareUrl = 'https://wa.me/?text=' + currentUrl;
+             window.open(whatsappShareUrl);
             };
 
             document.getElementById("backBtn").onclick = function () {

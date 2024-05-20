@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Calendar</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .day {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
+  .event {
+    background-color: #e0e0e0;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="calendar" id="calendar"></div>
+
+<script>
+  // Simulated JSON data
+  const events = [
+    { name: "Event 1", date: "2024-05-16", startTime: "10:00", endTime: "12:00" },
+    { name: "Event 2", date: "2024-05-17", startTime: "14:00", endTime: "16:00" },
+    { name: "Event 3", date: "2024-05-17", startTime: "17:00", endTime: "19:00" },
+    { name: "Event 4", date: "2024-05-18", startTime: "09:00", endTime: "11:00" }
+    // Add more events as needed
+  ];
+
+  const calendar = document.getElementById('calendar');
+
+  // Function to render events
+  function renderEvents() {
+    events.forEach(event => {
+      const eventElement = document.createElement('div');
+      eventElement.classList.add('event');
+      eventElement.textContent = `${event.name} - ${event.startTime} to ${event.endTime}`;
+
+      const date = new Date(event.date);
+      const dayIndex = date.getDay();
+
+      calendar.children[dayIndex].appendChild(eventElement);
+    });
+  }
+
+  // Function to create calendar days
+  function createCalendar() {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    
+    days.forEach(day => {
+      const dayElement = document.createElement('div');
+      dayElement.classList.add('day');
+      dayElement.textContent = day;
+      calendar.appendChild(dayElement);
+    });
+  }
+
+  createCalendar();
+  renderEvents();
+</script>
+
+</body>
+</html>
