@@ -447,6 +447,9 @@ function main() {
 
         
         eventElement.querySelector("#time").innerHTML = getMyTimeString(eventID);
+        eventElement.querySelector(".event-timeEntry").innerHTML = getMyTimeEntryString(eventID);
+
+        
 
 
 
@@ -548,8 +551,20 @@ function main() {
     function onLanguageChange(language) {
         console.log("Language changed to: ", language);
             eventElementAndDateArray.forEach((eventElementAndDate) => {
-                eventElementAndDate.element.querySelector(".event-date").innerHTML = getEventDateHtml(eventElementAndDate["dateString"]);                
+                eventElementAndDate.element.querySelector(".event-date").innerHTML = getEventDateHtml(eventElementAndDate["dateString"]);      
+                eventElementAndDate.element.querySelector("#time").innerHTML = getMyTimeString(eventElementAndDate.element.id);    
+
+                // const event = eventsJson[eventElementAndDate.element.id];
+                const eventID = eventElementAndDate.element.id;
+                const event = eventsJson[eventID];
+
+                if(event.timeEntry){
+                    eventElementAndDate.element.querySelector(".event-timeEntry").innerHTML = getMyTimeEntryString(eventID);            
+                }
+
             });
+
+
 
 
     }
@@ -818,7 +833,7 @@ function main() {
                     <div class="event-title">${event.name}</div>
                     <div class="event-descriptionShort">${event.descriptionShort} </div>
                     <div class="event-date"></div>
-                    <div class="event-timeEntry">🚪 ${event.timeEntry}</div>
+                    <div class="event-timeEntry"></div>
                     <div id="time"></div>
                     <div class="event-location">${event.location.name}</div>
                     <div class="event-price">${event.price}</div>

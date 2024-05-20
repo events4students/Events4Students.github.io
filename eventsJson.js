@@ -1147,6 +1147,7 @@ Produced by: Mark Swift
         "organizer":
         {
             "name": "Burning Cinema",
+            "image": "burningcinema.png",
             "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
             "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
             "email": "deggendorf@unifilm.de",
@@ -1199,6 +1200,7 @@ Euer Brennendes Kino
             "organizer":
             {
                 "name": "Burning Cinema",
+                "image": "burningcinema.png",
                 "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
                 "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
                 "email": "deggendorf@unifilm.de",
@@ -1216,7 +1218,7 @@ Euer Brennendes Kino
 
 
     {
-        "name": "Campus Party Burning Cinem",
+        "name": "Campus Party Burning Cinema",
         "date": "23.05.2024",
         "timeEntry": "18:30",
         "timeStart": "20:00",
@@ -1237,6 +1239,7 @@ Euer Brennendes Kino
         "organizer":
         {
             "name": "Burning Cinema",
+            "image": "burningcinema.png",
             "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
             "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
             "email": "deggendorf@unifilm.de",

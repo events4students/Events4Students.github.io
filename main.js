@@ -44,19 +44,52 @@ function calculateTimeEnd(startTime, duration) {
 }
 
 
+function getTimeStringCurrentLanguage(timeString) {
+    if (CURRENT_LANGUAGE === "de") {
+        return timeString;
+    } else if (CURRENT_LANGUAGE === "en") {
+        return convertTimeToEnglish(timeString);
+    }
+    
+}
+function convertTimeToEnglish(timeString) {
+    const [hours, minutes] = timeString.split(':').map(Number);
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    const newHours = hours % 12 || 12;
+    return `${newHours}:${String(minutes).padStart(2, '0')} ${ampm}`;
+}
+
+function getMyTimeEntryString(index) {
+    let event = eventsJson[index];
+    if (event.timeEntry) {
+        const timeEntry = getTimeStringCurrentLanguage(event.timeEntry);
+        const timeEntryText = `🚪 ${timeEntry}`;
+        return timeEntryText;
+    } else {
+        return "";
+    }  
+}
+
 function getMyTimeString(index) {
     let event = eventsJson[index];
+    let myTimeString = "⏱️ ";
+    const startTimeText = getTimeStringCurrentLanguage(event.timeStart);
+    myTimeString += startTimeText;
 
-    let timeEnd = "";
     if (event.timeEnd) {
         timeEnd = " - " + event.timeEnd;
+        const timeEndText = getTimeStringCurrentLanguage(event.timeEnd);
+        myTimeString += " - " + timeEndText;
     } else if (event.timeStart && event.duration) {
-        timeEnd = " - " + calculateTimeEnd(event.timeStart, event.duration);
+        const calculatedTimeEnd = calculateTimeEnd(event.timeStart, event.duration);
+        const calculatedTimeEndText = getTimeStringCurrentLanguage(calculatedTimeEnd);
+        myTimeString += " - " + calculatedTimeEndText;
     }
-    const myTimeString = "⏱️ " + event.timeStart + timeEnd
     return myTimeString;
 
 }
+
+
 
 // localStorage.clear();
 
