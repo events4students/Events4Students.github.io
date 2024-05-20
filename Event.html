@@ -338,9 +338,33 @@
                 var event = eventsJson[eventID];
                  console.log(eventID);
 
-                 
-                document.getElementById('images').innerHTML = event.images.map(image => "<img src='images/" + eventID + "/" + image + "' alt='img'>").join('');
+                
+                const images = getImages(eventID);
 
+                let imagesHtml = "";
+                if(images.length == 0){
+                    // images.push("icons/quest.png");
+                    imagesHtml = "<img src='images/icons/quest.jpg'>";
+                }else{
+                    imagesHtml = event.images.map(image => "<img src='images/" + eventID + "/" + image + "'>").join('');
+                }
+
+                const imagesElement = document.getElementById('images');
+                imagesElement.innerHTML = imagesHtml;
+
+                // if has only one image make the child image 100% width
+                if(images.length == 1){
+
+                    const size = "80%";
+                    imagesElement.children[0].style.width = size;
+                    // and height 100%
+                    imagesElement.children[0].style.height = size;
+                    //and remove max width and height 
+                    imagesElement.children[0].style.maxWidth = "none";
+                    imagesElement.children[0].style.maxHeight = "none";
+
+                    
+                }
 
 
                 const eventLanguage = event.language;

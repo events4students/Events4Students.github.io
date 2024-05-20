@@ -268,6 +268,22 @@ function calculateDateInfo(dateString){
 
 
 
+function getImages(eventID){
+
+    const event = eventsJson[eventID];
+    const images = event.images;
+
+
+    // if (images.length == 0) {
+    //     images.push("icons/quest.jpg");
+    // }
+
+    // return images.map(image => "<img src='images/" + eventID + "/" + image + "' alt='img'>").join('');
+    return images
+
+
+}
+
 
 
 

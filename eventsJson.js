@@ -1253,39 +1253,143 @@ Euer Brennendes Kino
         }
     },
 
+    {
+        "name": "Bicycle-Self-Help Workshop",
+        "date": "27.05.2024",
+        "timeStart": "9:30",
+        "timeEnd": "11:15",
+        "price": "free",
+        "category": "thd",
+        "language": "de+en",
+        "type": "inPerson",
+        "images": [],
+        "descriptionLong": {
+            "en": `
+        BikeStation
+        A bicycle can often be repaired quickly and easily with a few simple steps. In the BikeStation students and university members can check their bikes and carry out small repairs themselves. Self-help workshop means: You have to repair by yourself, we support you with tips, offer free use of tools and oil. Spare parts should be brought by yourself.
+
+The BikeStation is offered regularly during the semester. You can find the times on the screens at ECRI or on the website in the events section. You can also make an appointment by sending an email to sustainablity-lab@th-deg.de.
+Nachhaltigkeit
+Mitarbeiter:innen
+Studierende
+                `
+            },
+        "location": {
+            "name": "ECRI • Bicycle Shed or SILC Ground Floor",
+            "maps": "???",
+            "description": ""
+        },
+        "organizer":
+        {
+            "name": "THD",
+            "image": "thd.jpg",
+            "website": "https://www.th-deg.de/de/veranstaltung?id=13702436",
+        }
+    },
+
+    {
+        "name": "Bicycle-Self-Help Workshop",
+        "date": "29.05.2024",
+        "timeStart": "9:45",
+        "timeEnd": "13:00",
+        "price": "free",
+        "category": "thd",
+        "language": "de+en",
+        "type": "inPerson",
+        "images": [],
+        "descriptionLong": {
+            "en": `
+        BikeStation
+        A bicycle can often be repaired quickly and easily with a few simple steps. In the BikeStation students and university members can check their bikes and carry out small repairs themselves. Self-help workshop means: You have to repair by yourself, we support you with tips, offer free use of tools and oil. Spare parts should be brought by yourself.
+
+The BikeStation is offered regularly during the semester. You can find the times on the screens at ECRI or on the website in the events section. You can also make an appointment by sending an email to sustainablity-lab@th-deg.de.
+Nachhaltigkeit
+Mitarbeiter:innen
+Studierende
+                `
+        },
+        "location": {
+            "name": "ECRI • Bicycle Shed or SILC Ground Floor",
+            "maps": "???",
+            "description": ""
+        },
+        "organizer":
+        {
+            "name": "THD",
+            "image": "thd.jpg",
+            "website": "https://www.th-deg.de/de/veranstaltung?id=13702450",
+        }
+    },
+
+    {
+        "name": 'Deutsch-chilenische Summer school "Game Changers"',
+        "date": "23.09.2024",
+        "timeStart": "8:00",
+        "timeEnd": "20:00",
+        "price": "free",
+        "category": "thd",
+        "language": "de+en",
+        "type": "inPerson",
+        "images": [],
+        "descriptionLong": {
+            "de": `
+        Die Summer School findet dieses Jahr zu den Themengebieten "Kreislaufwirtschaft" und "Erneuerbare Energien statt. Sowohl Studierende der THD (Digitalisierungskolleg Progress-digitale Provinz) als auch chilenische und internationale Studierende nehmen teil. Es wird ein buntes Programm an Firmenbesichtigungen und -vorträgen und Workshops geboten sein.
+
+        [Nachhaltigkeit, Mitarbeiter:innen, Gründungsinteressierte, THD unterwegs, Auslandsaufenthalt, International Studierende, Studierende]
+                `
+        },
+        "location": {
+            "name": "Campus Deggendorf, Glashaus und Umgebung Deggendorfs",
+            "maps": "https://maps.app.goo.gl/QFhH5aXe6qxT95C99",
+            "description": "(Go around the glass house and enter at the back up the stairs)"
+        },
+        "organizer":
+        {
+            "name": "Kathrin Auer",
+            "image": "katrinauer.jpeg",
+            "website": "https://www.th-deg.de/de/veranstaltung?id=11635428",
+            "email": "pdp@th-deg.de"
+        }
+    },
+
+    {
+        "name": 'GROW GründerWerkstatt',
+        "date": "23.09.2024",
+        "timeStart": "08:30",
+        "timeEnd": "12:00",
+        "price": "free",
+        "category": "thd",
+        "language": "de+en",
+        "type": "inPerson",
+        "images": [],
+        "descriptionLong": {
+            "de": `
+       Die GROW GründerWerkstatt lädt Teilnehmerinnen und Teilnehmer herzlich ein, ihre kreativen Ideen in einem inspirierenden Umfeld zu entwickeln. Durch ein spannendes Unternehmensplanspiel haben die Teilnehmenden die Chance, gemeinsam im Team innovative Geschäftsmodelle zu entwerfen. Dabei wird intensiv an der Ausarbeitung eigener Geschäftsideen gearbeitet und gleichzeitig vermittelt, wie man aus aktuellen Trends erfolgreiche Geschäftsideen entwickelt, bewertet und vorantreibt.
+
+Die nächste GROW GründerWerkstatt findet vom 23. bis 27. September 2024 an der Technischen Hochschule Deggendorf statt.
+
+Für weitere Informationen und Anmeldungen steht Alina Pollersbeck gerne zur Verfügung:
+Telefon: +49 (0)8723 20-2994
+E-Mail: Alina.Pollersbeck@Hans-Lindner-Stiftung.de
+
+Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarbeiter/innen kostenfrei. Für alle anderen Teilnehmer/innen beträgt die Gebühr 200,00 €. Eine Teilnahmebescheinigung wird ausgestellt. Studierende der TH Deggendorf haben die Möglichkeit, die Kurse als AWP-Fach mit 2 ECTS-Punkten anzurechnen, indem sie das Zertifikat vorlegen.
+
+        [Duales Studium, Mitarbeiter:innen, Alumni, Gründungsinteressierte, Studierende]
+                `
+        },
+        "location": {
+            "name": "THD, Campus Deggendorf",
+            "maps": "https://maps.app.goo.gl/QFhH5aXe6qxT95C99",
+            "description": "(Go around the glass house and enter at the back up the stairs)"
+        },
+        "organizer":
+        {
+            "name": "THD",
+            "image": "thd.png",
+            "website": "https://www.th-deg.de/de/veranstaltung?id=14143182",
+            "email": "Alina.Pollersbeck@Hans-Lindner-Stiftung.de"
+        }
+    },
+    
     
 ];
-
-
-
-    //   {
-    //     "name": "XXX",
-    //     "date": "XXX",
-    //     "timeStart": "19:00",
-    //     "timeEnd": "21:00",
-    //     "price": "free",
-    //     "category":"international",
-    //     "registration": "no",
-    //     "type": "inPerson",
-    //     "language": "en",
-    //     "images": ["1.jpg", "2.jpg"],
-
-    //     "descriptionLong": {
-    //     "en": `
-        
-    //     `},
-    //     "location": {
-    //         "name": "XXX",
-    //         "maps": "https://maps.app.goo.gl/ZZYm5BGW6woZfXCN7",
-    //         "description": ""
-    //     },
-    //     "organizer":
-    //     {
-    //         "name": "ESN Deggendorf",
-    //         "image": "esn.jpg",
-    //         "email": "",
-    //         "website": "https://www.instagram.com/esn_deggendorf/"
-    //     }
-
-    // },
-

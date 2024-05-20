@@ -442,6 +442,16 @@ function main() {
         }
 
 
+            // <img class="clickable" id="thumbnail" src="images/${index}/${event.images[0]}" alt="img">
+
+        const images = getImages(eventID);
+        if(images.length > 0){
+            eventElement.querySelector("#thumbnail").src = `images/${eventID}/${images[0]}`;
+        }else{
+            eventElement.querySelector("#thumbnail").src = "images/icons/quest.jpg";
+        }
+
+
 
 
 
@@ -827,7 +837,7 @@ function main() {
     function createEventHTML(event, index) {
             let eventHTML = `
             <div class="event-header">
-                 <img class="clickable"  id="thumbnail" src="images/${index}/${event.images[0]}" alt="img">
+                 <img class="clickable"  id="thumbnail">
                 
                 <div class="details-container clickable" >
                     <div class="event-title">${event.name}</div>
