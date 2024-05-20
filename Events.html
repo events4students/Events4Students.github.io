@@ -169,6 +169,8 @@
         max-width: 30vw;
         max-height: 30vw;
 
+        margin: auto 0px;
+
         
 
 /* #no stretching but cuts of borders */
@@ -462,6 +464,20 @@ function main() {
         eventElement.querySelector("#time").innerHTML = getMyTimeString(eventID);
         eventElement.querySelector(".event-timeEntry").innerHTML = getMyTimeEntryString(eventID);
 
+
+
+        
+        const price = event.price;
+        if(price === "free"){
+            // eventElement.querySelector(".event-price").innerHTML = "🆓";
+            //hide if free
+            eventElement.querySelector(".event-price").style.display = "none";
+        }else{
+            eventElement.querySelector(".event-price").innerHTML = price;
+        }
+
+       
+
         
 
 
@@ -744,6 +760,9 @@ function main() {
             }
 
 
+     
+
+
         });
 
     document.getElementById("deBtn").addEventListener("click", function () {
@@ -849,7 +868,7 @@ function main() {
                     <div class="event-timeEntry"></div>
                     <div id="time"></div>
                     <div class="event-location">${event.location.name}</div>
-                    <div class="event-price">${event.price}</div>
+                    <div class="event-price"></div>
                     <div class="event-language">${event.language}</div>
 
                 </div>
