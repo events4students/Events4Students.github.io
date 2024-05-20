@@ -1390,6 +1390,121 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
             "email": "Alina.Pollersbeck@Hans-Lindner-Stiftung.de"
         }
     },
+
+    {
+        "name": 'Meet the Prof: Patrick Glauner',
+        "date": "28.05.2024",
+        "timeStart": "17:30",
+        "timeEnd": "19:00",
+        "price": "free",
+        "category": "special",
+        "language": "de+en",
+        "type": "inPerson",
+        "imagePaths": ["glauner.jpeg"],
+        "descriptionLong": {
+            "en": `
+            Come and ask your questions to Prof. Dr. Patrick Glauner. It's a great opportunity to get to know him better and to ask him about his research and teaching. It's a casual event, so feel free to ask anything you want. We're looking forward to seeing you there!
+                `
+        },
+        "location": {
+            "name": "THD ITC2+ 0.16",
+            "maps": "https://maps.app.goo.gl/boccmURbaNBVo5rAA",
+            "description": ""
+        },
+        "organizer":
+        {
+            "name": "Luisa Friebel",
+            "image": "thd.png",
+            "website": "",
+            "email": "luisa.friebel@stud.th-deg.de"
+        }
+    },
+
+    {
+        "name": 'Meet the Prof: Thorsten Matje',
+        "date": "11.06.2024",
+        "timeStart": "17:30",
+        "timeEnd": "19:00",
+        "price": "free",
+        "category": "special",
+        "language": "de+en",
+        "type": "inPerson",
+        "imagePaths": ["matje.jpeg"],
+        "descriptionLong": {
+            "en": `
+            Come and ask your questions to Prof. Dr. Thorsten Matje. It's a great opportunity to get to know him better and to ask him about his research and teaching. It's a casual event, so feel free to ask anything you want. We're looking forward to seeing you there!
+                `
+        },
+        "location": {
+            "name": "THD ITC2+ 0.16",
+            "maps": "https://maps.app.goo.gl/boccmURbaNBVo5rAA",
+            "description": ""
+        },
+        "organizer":
+        {
+            "name": "Luisa Friebel",
+            "image": "thd.png",
+            "website": "",
+            "email": "luisa.friebel@stud.th-deg.de"
+        }
+    },
+
+    {
+        "name": 'Meet the Prof: Helena Liebelt',
+        "date": "25.06.2024",
+        "timeStart": "17:30",
+        "timeEnd": "19:00",
+        "price": "free",
+        "category": "special",
+        "language": "de+en",
+        "type": "inPerson",
+        "imagePaths": ["liberlt.jpeg"],
+        "descriptionLong": {
+            "en": `
+            Come and ask your questions to Prof. Dr. Helena Liebelt. It's a great opportunity to get to know him better and to ask him about his research and teaching. It's a casual event, so feel free to ask anything you want. We're looking forward to seeing you there!
+                `
+        },
+        "location": {
+            "name": "THD ITC2+ 0.16",
+            "maps": "https://maps.app.goo.gl/boccmURbaNBVo5rAA",
+            "description": ""
+        },
+        "organizer":
+        {
+            "name": "Luisa Friebel",
+            "image": "thd.png",
+            "website": "",
+            "email": "luisa.friebel@stud.th-deg.de"
+        }
+    },
+    {
+        "name": 'Meet the Prof: Wolfgang Dorner',
+        "date": "09.07.2024",
+        "timeStart": "17:30",
+        "timeEnd": "19:00",
+        "price": "free",
+        "category": "special",
+        "language": "de+en",
+        "type": "inPerson",
+        "imagePaths": ["dorner.jpeg"],
+        "descriptionLong": {
+            "en": `
+            Come and ask your questions to Prof. Dr. Wolfgang Dorner. It's a great opportunity to get to know him better and to ask him about his research and teaching. It's a casual event, so feel free to ask anything you want. We're looking forward to seeing you there!
+                `
+        },
+        "location": {
+            "name": "THD ITC2+ 0.16",
+            "maps": "https://maps.app.goo.gl/boccmURbaNBVo5rAA",
+            "description": ""
+        },
+        "organizer":
+        {
+            "name": "Luisa Friebel",
+            "image": "thd.png",
+            "website": "",
+            "email": "luisa.friebel@stud.th-deg.de"
+        }
+    },
     
     
 ];

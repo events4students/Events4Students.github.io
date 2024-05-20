@@ -171,9 +171,10 @@
 
         
 
-
-        /* object-fit: cover; #no stretching but cuts of borders */
-        /* object-fit: contain; # shows fill but adds transparent boderes at the side */
+/* #no stretching but cuts of borders */
+        object-fit: cover; 
+        /* # shows fill but adds transparent boderes at the side */
+        /* object-fit: contain;  */
         /* object-fit: fill; # seems the same as default */
         /* object-fit: scale-down; shows all but borders */
         /* object-fit: none; #trash  */
@@ -445,11 +446,13 @@ function main() {
             // <img class="clickable" id="thumbnail" src="images/${index}/${event.images[0]}" alt="img">
 
         const images = getImages(eventID);
-        if(images.length > 0){
-            eventElement.querySelector("#thumbnail").src = `images/${eventID}/${images[0]}`;
-        }else{
-            eventElement.querySelector("#thumbnail").src = "images/icons/quest.jpg";
-        }
+        // if(images.length > 0){
+        //     eventElement.querySelector("#thumbnail").src = `images/${eventID}/${images[0]}`;
+        // }else{
+        //     eventElement.querySelector("#thumbnail").src = "images/icons/quest.jpg";
+        // }
+
+        eventElement.querySelector("#thumbnail").src = images[0];
 
 
 

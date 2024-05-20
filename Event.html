@@ -341,13 +341,16 @@
                 
                 const images = getImages(eventID);
 
-                let imagesHtml = "";
-                if(images.length == 0){
-                    // images.push("icons/quest.png");
-                    imagesHtml = "<img src='images/icons/quest.jpg'>";
-                }else{
-                    imagesHtml = event.images.map(image => "<img src='images/" + eventID + "/" + image + "'>").join('');
-                }
+
+                const imagesHtml = images.map(imagePath => "<img src='" +imagePath+ "'>").join('');
+
+                // let imagesHtml = "";
+                // if(images.length == 0){
+                //     // images.push("icons/quest.png");
+                //     imagesHtml = "<img src='images/icons/quest.jpg'>";
+                // }else{
+                //     imagesHtml = event.images.map(image => "<img src='images/" + eventID + "/" + image + "'>").join('');
+                // }
 
                 const imagesElement = document.getElementById('images');
                 imagesElement.innerHTML = imagesHtml;
@@ -362,6 +365,9 @@
                     //and remove max width and height 
                     imagesElement.children[0].style.maxWidth = "none";
                     imagesElement.children[0].style.maxHeight = "none";
+
+                    //rounded corners bigger
+                    imagesElement.children[0].style.borderRadius = "40px";
 
                     
                 }
@@ -466,7 +472,13 @@
            
             document.getElementById('organizer-image').src = getOrganizerProfileImagePath(eventID);
                 document.getElementById('organizer-name').innerHTML = event.organizer.name;
-                document.getElementById('organizer-website').innerHTML = "🔗" + getLinkElement(event.organizer.website);
+                if(event.organizer.website){
+                    document.getElementById('organizer-website').innerHTML = "🔗" + getLinkElement(event.organizer.website);
+                }else{
+                    document.getElementById('organizer-website').style.display = 'none';
+                }
+                
+                // document.getElementById('organizer-website').innerHTML = "🔗" + getLinkElement(event.organizer.website);
                 if (event.organizer.email) {
                     document.getElementById('organizer-email').innerHTML = "✉️ " + event.organizer.email;
                 } else {

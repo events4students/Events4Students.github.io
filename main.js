@@ -271,15 +271,26 @@ function calculateDateInfo(dateString){
 function getImages(eventID){
 
     const event = eventsJson[eventID];
-    const images = event.images;
+
+    let imagePaths = [];
+
+    if (!event.images){
+        console.log(event.imagePaths)
+        imagePaths = event.imagePaths.map(image => `images/path/${image}`);
+    } else if (event.images.length == 0){
+        imagePaths.push("images/icons/quest.jpg");
+    }else{
+        console.log("images:", event.images)
+        imagePaths = event.images.map(image => `images/${eventID}/${image}`);
+    }
+    
 
 
-    // if (images.length == 0) {
-    //     images.push("icons/quest.jpg");
-    // }
+    console.log("imagePaths:",imagePaths)
+    
 
     // return images.map(image => "<img src='images/" + eventID + "/" + image + "' alt='img'>").join('');
-    return images
+    return imagePaths
 
 
 }
