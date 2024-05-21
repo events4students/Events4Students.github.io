@@ -1,4 +1,4 @@
-console.log("main.js loaded");
+// console.log("main.js loaded");
 
 
 function getLinkElement(link) {
@@ -106,7 +106,7 @@ function loadLanguage(){
 
 
 let CURRENT_LANGUAGE = loadLanguage();
-console.log("getLanguage() loaded:", CURRENT_LANGUAGE);
+// console.log("getLanguage() loaded:", CURRENT_LANGUAGE);
 
 function setLanguage(language){
     CURRENT_LANGUAGE = language;
@@ -275,18 +275,18 @@ function getImages(eventID){
     let imagePaths = [];
 
     if (!event.images){
-        console.log(event.imagePaths)
+        // console.log(event.imagePaths)
         imagePaths = event.imagePaths.map(image => `images/path/${image}`);
     } else if (event.images.length == 0){
         imagePaths.push("images/icons/quest.jpg");
     }else{
-        console.log("images:", event.images)
+        // console.log("images:", event.images)
         imagePaths = event.images.map(image => `images/${eventID}/${image}`);
     }
     
 
 
-    console.log("imagePaths:",imagePaths)
+    // console.log("imagePaths:",imagePaths)
     
 
     // return images.map(image => "<img src='images/" + eventID + "/" + image + "' alt='img'>").join('');
