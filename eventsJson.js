@@ -1414,7 +1414,7 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
         "organizer":
         {
             "name": "Luisa Friebel",
-            "image": "thd.png",
+            "image": "luisa.jpeg",
             "website": "",
             "email": "luisa.friebel@stud.th-deg.de"
         }
@@ -1443,7 +1443,7 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
         "organizer":
         {
             "name": "Luisa Friebel",
-            "image": "thd.png",
+            "image": "luisa.jpeg",
             "website": "",
             "email": "luisa.friebel@stud.th-deg.de"
         }
@@ -1472,7 +1472,7 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
         "organizer":
         {
             "name": "Luisa Friebel",
-            "image": "thd.png",
+            "image": "luisa.jpeg",
             "website": "",
             "email": "luisa.friebel@stud.th-deg.de"
         }
@@ -1500,7 +1500,7 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
         "organizer":
         {
             "name": "Luisa Friebel",
-            "image": "thd.png",
+            "image": "luisa.jpeg",
             "website": "",
             "email": "luisa.friebel@stud.th-deg.de"
         }
