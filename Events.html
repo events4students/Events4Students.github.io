@@ -262,8 +262,18 @@
     }
 
 
+    .bottom-right {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+        /* align all items on the right */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+    }
+/* 
     .event-language{
-        /* display: none;    */
         position: absolute;
         right: 20px;
         bottom: 20px;
@@ -273,7 +283,7 @@
         right: 20px;
         bottom: 40px;
     }
-   
+    */
 
 
    .filtes{
@@ -868,8 +878,11 @@ function main() {
                     <div class="event-timeEntry"></div>
                     <div id="time"></div>
                     <div class="event-location">${event.location.name}</div>
-                    <div class="event-price"></div>
-                    <div class="event-language">${event.language}</div>
+                    <div class="bottom-right">
+                        <div class="event-language">${event.language}</div>
+                        <div class="event-price"></div>
+                    </div>
+             
 
                 </div>
                 <div class="event-actions">

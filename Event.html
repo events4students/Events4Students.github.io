@@ -33,7 +33,19 @@
             padding: 0;
             /* background-color: #f3f3f3; */
             background-color: white;
+            font-size: 20px;
         }
+    h1{
+        font-size: 30px !important;
+        font-weight: bold;
+        
+    }
+    h2{
+        font-size: 25px;
+        font-weight: bold;
+        padding: 0px;
+        margin: 0px;
+    }
 
         button {
             border: none;
@@ -78,12 +90,13 @@
             top: 30px;
             left: 30px;
             background-color: var(--orange);
-            border-radius: 10px;
-            padding: 15px 30px;
+            border-radius: 40px;
+            padding: 20px 30px;
             /* width: 70px; */
             /* height: 50px; */
             font-weight: bold;
-            font-size: 16px;
+            font-size: larger;
+            /* font-size: 16px; */
         }
 
 
@@ -108,17 +121,17 @@
     } */
 
     #event-header {
-        margin-top: 30px;
+        margin-top: 80px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        text-align: center  ;
         /* margin-bottom: 20px; */
     }
 
-    #event-name {
-        font-size: 24px;
-        font-weight: bold;
-    }
+    /* #event-name {
+
+    } */
 
     #descriptionLong {
         /* margin-top: 10px; */
@@ -146,6 +159,12 @@
         min-width: 100%;
     }
 
+
+    /* #organizer-name {
+        font-size: 20px;
+        font-weight: bold;
+    } */
+
     #organizer-profile {
         display: flex;
         align-items: center;
@@ -165,13 +184,24 @@
         /* margin: 0; */
         padding: 0;
 
+        /* margin: 0px auto !important; */
+        margin: auto 0px !important;
+
         /* transform: translateY(12px); */
 
         /* filter: brightness(0); */
     }
 
-    #organizer-details {
+    /* #organizer-details {
         font-size: 16px;
+    } */
+
+    #organizer-website{
+        margin-top: 10px;
+    }
+
+    #organizer-website *{
+        margin-top : 10px;
     }
 
     #images {
@@ -228,17 +258,25 @@
     
     #shareBtn {
         /* display: none; */
-        background-color: var(--orange);
+        background-color: rgb(37, 211, 102);
     }
 
     #shareBtn img{
-        width: 20px;
-        height: 20px;
+        width: 40px;
+        height: 40px;
         margin: 0px;
-        padding: 0px 2px;
+        /* padding: 2px 5px; */
+        padding: 10px;
         transform: translateY(2px);
+        filter: invert(1);
         /* margin-right: 10px; */
     
+    }
+
+    #eventbuttons{
+        position: absolute;
+        top: 30px;
+        right: 30px;
     }
 
     
@@ -255,15 +293,16 @@
         </div>
     </div>
 
-
+    <div id="eventbuttons">
+        <button id="follow-button"><i class="fab fa-twitter"></i>Follow</button>
+        <button id="shareBtn"><img src="images/icons/share.png"></button>
+    </div>
 
     <div id="container">
+    
         <div id="event-header">
-            <div id="event-name">Event Name</div>
-            <div>
-                <button id="follow-button"><i class="fab fa-twitter"></i>Follow</button>
-                <button id="shareBtn"><img src="images/icons/share.png"></button>
-            </div>
+            <h1 id="event-name">Event Name</h1>
+           
         </div>
         <div id="images">
                 <img src="images/icons/upload.png" alt="img">
@@ -314,7 +353,7 @@
         <div id="organizer-container">
             <img id="organizer-image" alt="img">
                 <div id="organizer-details">
-                    <div id="organizer-name">Von: Sign In</div>
+                    <h2 id="organizer-name">Von: Sign In</h2>
                     <div id="organizer-website">Website: Sign In</div>
                     <div id="organizer-email">✉️: Sign In</div>
                     <div id="organizer-whatsapp">💬: Sign In</div>
@@ -413,7 +452,7 @@
 
                 const registration = event.registration;
                 // "registration": "required"
-                if(registration == "required"){
+                if(registration == "required" || registration == "yes"){
                     document.getElementById('registration').innerHTML = "[🔒🔑📝Registration: required] " + getLinkElement(event.organizer.website);
                 }else{
                      document.getElementById('registration').style.display = 'none';
@@ -492,7 +531,7 @@
                 }
 
                 if (event.organizer.website2){
-                    document.getElementById('organizer-website').innerHTML += "<div>" +  getLinkElement(event.organizer.website2)+ "</div>";
+                    document.getElementById('organizer-website').innerHTML += "<div>" + "🔗" +  getLinkElement(event.organizer.website2)+ "</div>";
                 }
 
 

@@ -1001,7 +1001,7 @@ See you on the trails!
     },
 
       {
-        "name": "BBQ day with friends",
+          "name": "(postponed due to bad weather) BBQ day with friends",
         "date": "21.05.2024",
         "timeStart": "19:30",
         "timeEnd": "",
@@ -1505,6 +1505,148 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
             "email": "luisa.friebel@stud.th-deg.de"
         }
     },
+
+
+    
+
+    {
+        "name": "Nurnberg Historical Exploration",
+        "date": "21.05.2024",
+        "timeStart": "19:30",
+        "timeEnd": "",
+        "price": "10-12€",
+        "category": "international",
+        "registration": "yes",
+        "type": "inPerson",
+        "language": "en",
+        "imagePaths": ["nurnberg.jpg"],
+
+        "descriptionLong": {
+            "en": `
+        🏰🔍 Historical Exploration: Discovering Nuremberg's Rich Heritage 🗺📜
+
+Greetings, history enthusiasts!
+
+Get ready to delve into the captivating past of Nuremberg as ESN Bayreuth, the ESN candidate section ISN Regensburg, and ESN Deggendorf join forces for an immersive journey through the city's historical heart.
+
+🏰 Exploring Nuremberg's Iconic Landmarks
+From the towering walls of the Imperial Castle to the charming cobblestone streets of the Old Town, our adventure will take us on a voyage through centuries of history. Prepare to be awed by the grandeur of medieval architecture and enchanted by the stories that echo through the city's ancient walls.
+
+🕰 Step Back in Time: Guided Tours
+Led by knowledgeable guides, our group will unravel the secrets of Nuremberg's past through engaging and informative tours. Learn about the city's pivotal role in German history, its cultural significance during the Renaissance, and its resilience in modern challenges.
+
+👥 Cooperation Details:
+- Date: Saturday, the 25th of May 2024
+- Meeting Point: Deggendorf Central Station
+- Time: 08:30 am
+- Itinerary: Guided tours and exploration of key historical sites
+- What to Bring: Comfortable walking shoes, camera, water, and a thirst for knowledge!
+
+Join us as we unravel the mysteries of Nuremberg's past, forge new friendships, and create lasting memories. Whether you're a history buff or simply curious about the world around you, this cooperative adventure promises to be an enriching experience for all.
+
+See you in Nuremberg!
+
+Sign up via link in the Bio
+
+P.S. The participation fee is 10 Euro for ESNcard holder and 12 Euro for non ESNcard holder!
+
+Ticket Sale for the Trip:
+12:30 to 2 pm in the K building Thursday and Friday
+        `},
+        "location": {
+            "name": "Studierendenviertel",
+            "maps": "https://maps.app.goo.gl/mGwNN3vor2DweJKF8",
+            "description": ""
+        },
+        "organizer":
+        {
+            "name": "ESN Deggendorf",
+            "image": "esn.jpg",
+            "email": "",
+            "website": "https://docs.google.com/forms/d/e/1FAIpQLScjigchEExq2xlFKbap1WBOdTcXUe2N25tLUtE6mxc2zsFDjA/viewform?usp=sf_link",
+            "website2": "https://www.instagram.com/esn_deggendorf/"
+        }
+
+    },
+
+
+    {
+        "name": "Spring Picnic",
+        "date": "23.05.2024",
+        "timeStart": "17:00",
+        "price": "free",
+        "category": "international",
+        "registration": "no",
+        "type": "inPerson",
+        "language": "en",
+        "imagePaths": ["springpicnic.jpg"],
+
+        "descriptionLong": {
+            "en": `
+        Ready for a relaxing day near the Donau? ☀️😌 Join us to have a nice picnic and meet people! We will bring some games and nice music 😋🎶 Remember to bring food to share and if you want to play some specific games bring them to!! When: 23/ 05/24
+Where: Donau
+Time: 17:00
+See you there!! ☀️😋☀️😋
+        `},
+        "location": {
+            "name": "Donau Deggendorf",
+            "maps": "https://maps.app.goo.gl/gWD9P1hQo8eaqKZK9",
+            "description": ""
+        },
+        "organizer":
+        {
+            "name": "ESN Deggendorf",
+            "image": "esn.jpg",
+            "email": "",
+            "website": "https://www.instagram.com/esn_deggendorf/"
+        }
+
+    },
+
+
+
+    {
+        "name": "Narnia",
+        "date": "21.05.2024",
+        "timeStart": "19:30",
+        "price": "free",
+        "category": "special",
+        "registration": "no",
+        "type": "inPerson",
+        "language": "de+en",
+        "imagePaths": ["narnia.webp"],
+
+        "descriptionLong": {
+            "de":`Film Abend
+            Während London 1940 bombardiert wird, sind die vier Pevensie-Geschwister auf dem Lande evakuiert. Eines Tages findet Nesthäkchen Lucy einen Kleiderschrank als Versteck, der sie in eine fantastische Welt transportiert, nach Narnia. Schon bald holt sie auch ihre Geschwister nach Narnia. Dort schließen sie sich dem sprechenden Löwen Aslan an, der gegen die teuflische Weiße Hexe Jadis kämpft, unter der Narnia sich bereits 100 Jahre lang im ständigen Winter befindet - ohne ein einziges Weihnachten.
+
+#narnia #thdeggendorf #campusconnect
+`,
+            "en": `
+      Movie Night
+
+While London is being bombed in 1940, the four Pevensie siblings are evacuated to the countryside. One day, little Lucy finds a closet as a hiding place, which transports her to a fantastic world, to Narnia. She soon brings her siblings to Narnia too. There they join the talking lion Aslan, who fights against the diabolical White Witch Jadis, under whom Narnia has been in constant winter for 100 years - without a single Christmas.
+
+Tuesday 21.05 at 7:30 pm in Room I001
+
+#narnia #thdeggendorf #campusconnect
+        `
+    },
+        "location": {
+            "name": "THD I001",
+            "maps": "https://maps.app.goo.gl/YiuBS6LggWd9DPGb7",
+            "description": ""
+        },
+        "organizer":
+        {
+            "name": "Campus Connect Deggendorf  ",
+            "image": "campusconnect.jpg",
+            "email": "",
+            "website": "https://www.instagram.com/campusconnect_deggendorf"
+        }
+
+    },
     
     
 ];
+
