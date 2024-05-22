@@ -244,7 +244,7 @@ Die vielfältige, fantastische Welt und der spielerische Geist des legendären R
         
         "price": "2€",
         "category":"cinema",
-        "language": "de",
+        "language": "en",
         "images": ["1.jpg", "2.jpg", "3.jpg"],
 
         "descriptionLong": {
@@ -1225,7 +1225,7 @@ Euer Brennendes Kino
 
         "price": "free",
         "category": "cinema",
-        "language": "de",
+        "language": "en",
         "images": ["campusParty.jpg"],
 
         "descriptionLong": {
@@ -1235,7 +1235,23 @@ Euer Brennendes Kino
 18:30 Uhr Minispiele und Verkauf
 19:30 Uhr The Hunger Games (OV)
 20:00 Uhr Party vor dem J-Gebäude
-                  ` },
+                  `, "en":`Hunger Games X Campus Party: this Thursday 🎉 
+
+6:30pm: 
+Mini games, free tickets!! 🎟
+7:30pm: 
+"The Ballad of Songbirds & Snakes"
+8pm: Party, DJ & beerpong 🍻
+
+All evening: drinks, snacks & hot dogs 🌭🍿
+
+Ticket pre-sale: 
+campus store at lunchbreak
+22.05. | 23.05. 
+
+More details on Instagram @hochschulkino_deggendorf
+
+Your Burning Cinema Team 😁` },
         "organizer":
         {
             "name": "Burning Cinema",
@@ -1359,12 +1375,45 @@ Studierende
         "timeEnd": "12:00",
         "price": "free",
         "category": "thd",
-        "language": "de+en",
+        "language": "de",
         "type": "inPerson",
+        "registration": "required",
         "images": [],
         "descriptionLong": {
             "de": `
-       Die GROW GründerWerkstatt lädt Teilnehmerinnen und Teilnehmer herzlich ein, ihre kreativen Ideen in einem inspirierenden Umfeld zu entwickeln. Durch ein spannendes Unternehmensplanspiel haben die Teilnehmenden die Chance, gemeinsam im Team innovative Geschäftsmodelle zu entwerfen. Dabei wird intensiv an der Ausarbeitung eigener Geschäftsideen gearbeitet und gleichzeitig vermittelt, wie man aus aktuellen Trends erfolgreiche Geschäftsideen entwickelt, bewertet und vorantreibt.
+       
+       
+       
+       
+       die kostenfreie Projektwoche
+GROW GründerWerkstatt
+„Spielerisch Startup Ideen entwickeln – Von der Idee zur Innovation"
+
+wird von 23. September 2024 bis einschließlich 27. September 2024 wieder an der TH Deggendorf stattfinden. Sichern Sie sich jetzt einen Platz dafür!
+
+Sie, die Studierenden der THD, haben hier die Möglichkeit anhand eines Unternehmensplanspiels eigenständig Geschäftsmodelle im Team zu entwickeln.
+
+Zusätzlich besteht die Möglichkeit sich die Projektwoche als AWP-Fach (2 ECTS-Punkte) anrechnen zu lassen.
+
+Bei diesem Projekt der Hans Lindner Stiftung und dem Zentrum für Gründungsförderung / Startup Campus der THD wird intensiv an einer eigenen Geschäftsidee gearbeitet und auch gelernt, wie man aus Trends Geschäftsideen generiert, bewertet und weiterentwickelt. (Es wird kein Vorwissen vorausgesetzt!)
+
+Am Ende der Projektwoche werden die entstandenen Geschäftsideen im Rahmen einer Pitchveranstaltung einer Jury vorgestellt und im Anschluss prämiert.
+
+Für die Teilnahme wird ein kurzes Motivationsschreiben („Darum möchte ich an der GROW GründerWerkstatt teilnehmen!") mit max. 500 Zeichen benötigt.
+
+Hier geht's zur Anmeldung: https://www.dahoam-in-niederbayern.de/veranstaltungen/grow-gruenderwerkstatt-126609/
+
+Aufgrund der Ausgestaltung der Projektwoche ist die Anwesenheit während der gesamten Woche verpflichtend.
+
+Bei allgemeinen Fragen zur Projektwoche können sich Interessierte per E-Mail bei Alina.Pollersbeck@Hans-Lindner-Stiftung.de oder telefonisch unter 08723/20-2994 melden.
+
+Für Studierende, Dozierende und Mitarbeitende der Hochschule ist die Projektwoche kostenfrei (inkl. Unterlagen und Zertifikat).
+
+Die maximale Teilnehmerzahl sind 20 Personen. Die Unterrichtssprache ist Deutsch.
+       
+       ////////////////
+       
+            Die GROW GründerWerkstatt lädt Teilnehmerinnen und Teilnehmer herzlich ein, ihre kreativen Ideen in einem inspirierenden Umfeld zu entwickeln. Durch ein spannendes Unternehmensplanspiel haben die Teilnehmenden die Chance, gemeinsam im Team innovative Geschäftsmodelle zu entwerfen. Dabei wird intensiv an der Ausarbeitung eigener Geschäftsideen gearbeitet und gleichzeitig vermittelt, wie man aus aktuellen Trends erfolgreiche Geschäftsideen entwickelt, bewertet und vorantreibt.
 
 Die nächste GROW GründerWerkstatt findet vom 23. bis 27. September 2024 an der Technischen Hochschule Deggendorf statt.
 
@@ -1386,7 +1435,8 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
         {
             "name": "THD",
             "image": "thd.png",
-            "website": "https://www.th-deg.de/de/veranstaltung?id=14143182",
+            "website": "https://www.dahoam-in-niederbayern.de/veranstaltungen/grow-gruenderwerkstatt-126609/",
+            "website2": "https://www.th-deg.de/de/veranstaltung?id=14143182",
             "email": "Alina.Pollersbeck@Hans-Lindner-Stiftung.de"
         }
     },

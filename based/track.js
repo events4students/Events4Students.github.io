@@ -1,22 +1,30 @@
-const shouldTrackText = get('shouldTrack',"true");
-let shouldTrack = (shouldTrackText === "true");
 
 function main(){
 
+  const shouldTrackText = get('shouldTrack', "true");
+  let shouldTrack = (shouldTrackText === "true");
+
+  const url = window.location.href;
+
+  if (url.startsWith('file://')) {
+    console.log('[Local file, not tracking]');
+    return;
+  }
+
   if(shouldTrack){
+    const currentDateTimeString = getCurrentDateTimeString();
+
+    // if url is a local file, don't track
 
     console.log('Hello, Firebase!');
     const db = firebase.database();
     // make the databse a list and just push each time a person views a page to the list a string
-
-
-    const url = window.location.href;
-    const dateTimeString = getDateTimeString();
+  
     const ref = db.ref('views');
     const visitRef = ref.push();
     visitRef.set({
       url: url,
-      dateTime: dateTimeString,
+      dateTime: currentDateTimeString,
     });
 
   }else{
@@ -45,7 +53,7 @@ function main(){
 
 
 
-function getDateTimeString() {
+function getCurrentDateTimeString() {
   let date = new Date();
   let options = {
     day: '2-digit',
@@ -59,6 +67,40 @@ function getDateTimeString() {
   return date.toLocaleString('en-GB', options);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////
+
+function get(key, defaultValue = 1) {
+  const defaultValueIsNumber = (typeof defaultValue === 'number')
+  const defaultValueIsArray = (defaultValue.constructor === [].constructor)
+  const defaultValueIsObject = (defaultValue.constructor === ({}).constructor)
+  let json = false;
+  if ((defaultValueIsNumber == false) && (defaultValueIsArray || defaultValueIsObject)) {
+    json = true;
+  }
+  const value = localStorage.getItem(key);
+  if (value == null) {
+    set(key, defaultValue, json);
+    return defaultValue;
+  } else if (defaultValueIsNumber) {
+    return parseInt(value);
+  } else if (json || defaultValueIsArray || defaultValueIsObject) {
+    return JSON.parse(value);
+  } else {
+    return value;
+  }
+}
 ///////////////////////////////////////
 
 function en(x) {

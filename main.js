@@ -20,8 +20,6 @@ function getOrganizerProfileImagePath(index){
         const organizerProfileImagePath = `Organizers/${organizerPath}/profile.png`;
         return organizerProfileImagePath;
     }
-
-  
 }
 
 function calculateDayNameFromDateString(dateString){

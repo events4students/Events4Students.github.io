@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Editor</title>
+</head>
+<body>
+    <h1>Add New Event</h1>
+    <form id="eventForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name"><br>
+        
+        <label for="date">Date (dd.mm.yyyy):</label><br>
+        <input type="text" id="date"><br>
+        
+        <label for="timeStart">Start Time (hh:mm):</label><br>
+        <input type="text" id="timeStart"><br>
+        
+        <label for="price">Price:</label><br>
+        <input type="text" id="price"><br>
+        
+        <label for="category">Category:</label><br>
+        <input type="text" id="category"><br>
+        
+        <label for="registration">Registration:</label><br>
+        <input type="text" id="registration"><br>
+        
+        <label for="type">Type:</label><br>
+        <input type="text" id="type"><br>
+        
+        <label for="language">Language:</label><br>
+        <input type="text" id="language"><br>
+        
+        <label for="imagePaths">Image Paths (comma separated):</label><br>
+        <input type="text" id="imagePaths"><br>
+        
+        <label for="descriptionLongDe">Description (DE):</label><br>
+        <input type="text" id="descriptionLongDe"><br>
+        
+        <label for="descriptionLongEn">Description (EN):</label><br>
+        <input type="text" id="descriptionLongEn"><br>
+        
+        <label for="locationName">Location Name:</label><br>
+        <input type="text" id="locationName"><br>
+        
+        <label for="maps">Maps URL:</label><br>
+        <input type="text" id="maps"><br>
+        
+        <label for="organizerName">Organizer Name:</label><br>
+        <input type="text" id="organizerName"><br>
+        
+        <label for="organizerImage">Organizer Image:</label><br>
+        <input type="text" id="organizerImage"><br>
+        
+        <label for="organizerWebsite">Organizer Website:</label><br>
+        <input type="text" id="organizerWebsite"><br>
+        
+        <button type="button" onclick="addEvent()">Submit</button>
+    </form>
+    
+    <div id="errorMessages" style="color: red;"></div>
+
+    <script>
+        const data = [
+            {
+                "name": "Narnia",
+                "date": "21.05.2024",
+                "timeStart": "19:30",
+                "price": "free",
+                "category": "special",
+                "registration": "no",
+                "type": "inPerson",
+                "language": "de+en",
+                "imagePaths": [
+                    "narnia.webp"
+                ],
+                "descriptionLong": {
+                    "de": "Description in deutsch ... ",
+                    "en": "Description example in english ... "
+                },
+                "location": {
+                    "name": "THD I001",
+                    "maps": "https://maps.app.goo.gl/YiuBS6LggWd9DPGb7"
+                },
+                "organizer": {
+                    "name": "Campus Connect Deggendorf",
+                    "image": "campusconnect.jpg",
+                    "website": "https://www.instagram.com/campusconnect_deggendorf"
+                }
+            }
+        ];
+
+        function addEvent() {
+            const requiredFields = [
+                'name', 'date', 'timeStart', 'price', 'category', 'registration', 'type', 
+                'language', 'imagePaths', 'descriptionLongDe', 'descriptionLongEn', 
+                'locationName', 'maps', 'organizerName', 'organizerImage', 'organizerWebsite'
+            ];
+
+            let missingFields = [];
+            let newEvent = {};
+
+            requiredFields.forEach(field => {
+                let value = document.getElementById(field).value.trim();
+                if (!value) {
+                    missingFields.push(field);
+                } else {
+                    newEvent[field] = value;
+                }
+            });
+
+            if (missingFields.length > 0) {
+                document.getElementById('errorMessages').innerText = 'Please fill in the following fields: ' + missingFields.join(', ');
+                return;
+            }
+
+            newEvent = {
+                "name": newEvent.name,
+                "date": newEvent.date,
+                "timeStart": newEvent.timeStart,
+                "price": newEvent.price,
+                "category": newEvent.category,
+                "registration": newEvent.registration,
+                "type": newEvent.type,
+                "language": newEvent.language,
+                "imagePaths": newEvent.imagePaths.split(',').map(path => path.trim()),
+                "descriptionLong": {
+                    "de": newEvent.descriptionLongDe,
+                    "en": newEvent.descriptionLongEn
+                },
+                "location": {
+                    "name": newEvent.locationName,
+                    "maps": newEvent.maps
+                },
+                "organizer": {
+                    "name": newEvent.organizerName,
+                    "image": newEvent.organizerImage,
+                    "website": newEvent.organizerWebsite
+                }
+            };
+
+            data.push(newEvent);
+            document.getElementById('eventForm').reset();
+            document.getElementById('errorMessages').innerText = 'Event added successfully!';
+            console.log(JSON.stringify(data, null, 2));
+        }
+    </script>
+</body>
+</html>
