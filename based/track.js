@@ -6,47 +6,100 @@ function main(){
 
   const url = window.location.href;
 
-  if (url.startsWith('file://')) {
-    console.log('[Local file, not tracking]');
-    return;
-  }
+  const isLocalFile = url.startsWith('file://');
 
-  if(shouldTrack){
-    const currentDateTimeString = getCurrentDateTimeString();
 
-    // if url is a local file, don't track
+  const currentDateTimeString = getCurrentDateTimeString();
 
-    console.log('Hello, Firebase!');
-    const db = firebase.database();
-    // make the databse a list and just push each time a person views a page to the list a string
-  
+  const db = firebase.database();
+  if(shouldTrack && !isLocalFile){
+   
+    console.log('+');
     const ref = db.ref('views');
     const visitRef = ref.push();
     visitRef.set({
       url: url,
       dateTime: currentDateTimeString,
     });
-
   }else{
-    console.log('...');
+    console.log('.');
   }
+
+  const browser = navigator.userAgent;
+
+
+
+  const lastVisit = localStorage.getItem('lastVisit');
+
+  const uniqueUsersRef = db.ref('uniqueUsers');
+  const uniqueUserRef = uniqueUsersRef.push();
+  const uniqueUsersEachDayRef = db.ref('uniqueUsersEachDay');
+  const uniqueUsersEachDay = uniqueUsersEachDayRef.push(lastVisit);
+ 
+
+  const isNewUser = (lastVisit == null);
+
+
+
+  if (isNewUser) {
+    console.log('First visit:', currentDateTimeString);
+    uniqueUserRef.set({
+      url:url,
+      dateTime: currentDateTimeString,
+      browser: browser,
+    });
+  }else{
+    const todayDate = currentDateTimeString.split(' ')[0];
+    const lastVisitDate = lastVisit.split(' ')[0];
+    const firstVisitToday = (todayDate !== lastVisitDate);
+
+
+    if (firstVisitToday){
+      console.log('First Visited today:', currentDateTimeString);
+      uniqueUserRef.set({
+        url: url,
+        dateTime: currentDateTimeString,
+        browser: browser,
+      });
+
+    }else{
+      console.log('Already visited today:', currentDateTimeString);
+    }
+  }
+
+
+  if (lastVisit) {
+    console.log('Last visit was at:', currentDateTimeString);
+    // uniqueUsersEachDay.set
+    uniqueUsersEachDay.set({
+      url:url,
+      dateTime: lastVisit,
+      browser: browser,
+    });
+
+  } 
+
+
+
+
+
+  localStorage.setItem('lastVisit', currentDateTimeString);
+
+
+
+
+
+
+
+
+
+  const liveRightNowRef = db.ref('liveRightNow');
+  const liveRightNow = liveRightNowRef.push();
+  liveRightNow.set({url:url, startedAt: currentDateTimeString, browser: browser});
+  liveRightNow.onDisconnect().remove();
+
+
 }
-
-
-
-
-
-
-
-
-// const playersRef = db.ref('players');
-// const playerRef = playersRef.push();
-// const playerKey = playerRef.key;
-// playerRef.onDisconnect().remove();
-
-
-
-
 
 
 
