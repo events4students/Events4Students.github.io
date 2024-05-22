@@ -987,8 +987,7 @@ See you on the trails!
         `},
         "location": {
             "name": "Deggendorf Central Station",
-            "maps": "https://maps.app.goo.gl/CRb6bsdRCKB4s51s6",
-            "description": ""
+            "maps": "https://maps.app.goo.gl/4SeWdeApeeWN7Hx76",
         },
         "organizer":
         {
@@ -1562,7 +1561,7 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
     {
         "name": "Nurnberg Historical Exploration",
         "date": "25.05.2024",
-        "timeStart": "19:30",
+        "timeStart": "8:00",
         "timeEnd": "",
         "price": "10-12€",
         "category": "international",
@@ -1603,10 +1602,9 @@ P.S. The participation fee is 10 Euro for ESNcard holder and 12 Euro for non ESN
 Ticket Sale for the Trip:
 12:30 to 2 pm in the K building Thursday and Friday
         `},
-        "location": {
-            "name": "Studierendenviertel",
-            "maps": "https://maps.app.goo.gl/mGwNN3vor2DweJKF8",
-            "description": ""
+         "location": {
+            "name": "Deggendorf Central Station",
+            "maps": "https://maps.app.goo.gl/4SeWdeApeeWN7Hx76",
         },
         "organizer":
         {
