@@ -1561,7 +1561,7 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
     {
         "name": "Nurnberg Historical Exploration",
         "date": "25.05.2024",
-        "timeStart": "8:00",
+        "timeStart": "8:30",
         "timeEnd": "",
         "price": "10-12€",
         "category": "international",
