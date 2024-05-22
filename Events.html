@@ -276,12 +276,19 @@
         align-items: flex-end;
 
     }
-/* 
-    .event-language{
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
+ 
+    /* #time{
+        z-index: 3;
+    } */
+
+    /* .details-container{
+        z-index: 3;
     }
+    .event-language{
+        z-index: 2;
+    }
+     */
+    /*
     .event-price{
         position: absolute;
         right: 20px;
@@ -359,6 +366,7 @@
 
             <select id="categoryFilter">
                 <option value="any">Any Category</option>
+                <option value="followed">Followed</option>
                 <!-- <option value="sport">Sports</option>
                 <option value="cinema">Cinema</option>
                 <option value="international">International</option>
@@ -514,6 +522,38 @@ function main() {
 
         //  eventElementAndDate.element.querySelector(".event-date").innerHTML = getEventDateHtml(dateInfo["dateText"]); 
          eventElement.querySelector(".event-date").innerHTML = getEventDateHtml(event.date); 
+
+
+
+
+         const hasFollowed = hasFollowedThisEvent(eventID);
+            if(hasFollowed){
+                eventElement.style.backgroundColor = "rgba(0, 0, 255, 0.1)";
+            }
+
+
+
+
+       
+         if(event.postponed){
+            
+            const postponed = event.postponed;
+            const postponedIsString = typeof postponed === "string";
+            let postponedText = "Postponed";
+
+            if(postponedIsString){
+                const postponedReason = postponed;
+                postponedText += " " +postponedReason;
+            }
+
+          
+        
+            let postponedHTML = `<br/><span>[${postponedText}]</span>`;
+
+            eventElement.querySelector(".event-title").innerHTML += postponedHTML;
+            //change event background color to red
+            eventElement.style.backgroundColor = "rgba(255, 0, 0, 0.7)";
+        }
 
         // eventElement.querySelector(".event-date").innerHTML = eventDateHtml;
 
@@ -689,11 +729,33 @@ function main() {
             }
         }
 
+    function checkIfPassesCategoryFilter(eventElementAndDate, eventKeyName, filterText) {
+        let eventID = eventElementAndDate.element.id;
+        eventID = parseInt(eventID);
+        const event = eventsJson[eventID];
+        const eventValue = event[eventKeyName];
+
+        if (filterText == 'any') {
+            return true;
+        }else if (filterText == 'followed') {
+            return hasFollowedThisEvent(eventID);
+        }
+        else if (filterText == eventValue) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+        
+
 
 
         // document.getElementById("categoryFilter");
         // add dynamic categories all found in the eventsJson   
         const categories = [];
+
         eventsJson.forEach((event) => {
             if (!categories.includes(event.category)) {
                 categories.push(event.category);
@@ -713,7 +775,7 @@ function main() {
 
         
     // addFilterOnChange(checkIfPassesDateFilter,'dateFilter');
-    addFilterOnChange(checkIfPassesFilter,'categoryFilter','category');
+    addFilterOnChange(checkIfPassesCategoryFilter,'categoryFilter','category');
     // addFilterOnChange(checkIfPassesFilter,'typeFilter','type','NEEDS CUSOM FOR HYBRID!!!!');
     // addFilterOnChange(checkIfPassesFilter,'priceFilter','price');
     // addFilterOnChange(checkIfPassesFilter,'languageFilter','language','NEEDS CUSOM!!!!'); 
@@ -809,7 +871,7 @@ function main() {
 
        
         document.getElementById("addEventBtn").onclick = function () {
-            window.location.href = "Event.html?event=new";
+            window.location.href = "Editor.html";
         };
 
     document.querySelectorAll(".clickable").forEach((element) => {

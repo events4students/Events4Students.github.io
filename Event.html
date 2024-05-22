@@ -72,7 +72,7 @@
         }
 
     #container {
-        background-color: white;
+        /* background-color: white; */
         width:70vw;
         min-width: 500px;
         /* max-width: 55vw; */
@@ -105,24 +105,7 @@
 
 
 
-    #follow-button{
-        display: none;
-    }
     
-    #share-button {
-        /* display: none; */
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-    }
-    
-
-    /* #follow-button:hover{
-        background-color: #0056b3;
-    } */
 
     #event-header {
         margin-top: 80px;
@@ -258,7 +241,21 @@
         /* align-items: center; */
     }
 
+       #eventbuttons{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
 
+
+        /* #share-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    } */
     
     #shareBtn {
         /* display: none; */
@@ -277,11 +274,26 @@
     
     }
 
-    #eventbuttons{
+    #followBtn{
+        padding: 20px 30px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
         position: absolute;
-        top: 30px;
-        right: 30px;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
     }
+    
+
+
+
+
+ 
 
     
 </style>
@@ -297,8 +309,8 @@
         </div>
     </div>
 
+    <button id="followBtn"><i class="fab fa-twitter"></i>Follow</button>
     <div id="eventbuttons">
-        <button id="follow-button"><i class="fab fa-twitter"></i>Follow</button>
         <button id="shareBtn"><img src="images/icons/share.png"></button>
     </div>
 
@@ -368,18 +380,19 @@
     <script>
             const queryParams = new URLSearchParams(window.location.search);
             const eventParameter = queryParams.get('event');
+            const eventIdParameter = eventParameter;
+            // console.log(eventIdParameter);
+            const eventID = eventIdParameter ? parseInt(eventIdParameter) : 0;
+            var event = eventsJson[eventID];
 
-            if(eventParameter == 'new') {
-                document.getElementById('event-name').innerHTML = "New Event";
-            }else{
 
-                
+            let hasFollowed = hasFollowedThisEvent(eventID);
+            if (hasFollowed) {
+                document.body.style.backgroundColor = "rgba(0, 0, 255, 0.1)";
+                document.getElementById('followBtn').innerHTML = "Unfollow";
+                }
 
-                const eventIdParameter = eventParameter;
-                console.log(eventIdParameter);
-                const eventID = eventIdParameter ? parseInt(eventIdParameter) : 0;
-                var event = eventsJson[eventID];
-                 console.log(eventID);
+            // console.log(eventID);
 
                 
                 const images = getImages(eventID);
@@ -543,11 +556,49 @@
                 // document.getElementById('organizer-email').innerHTML = event.organizer.email;
                 document.getElementById('organizer-ratings').innerHTML = "Ratings: " + event.organizer.ratings;
            
-            }
+            
 
-            // document.getElementById('follow-button').onclick = function() {
-            //     alert("Follow");
-            // };
+            document.getElementById('followBtn').onclick = function() {
+
+
+                if (hasFollowed) {
+                    document.body.style.backgroundColor = "white";
+                    document.getElementById('followBtn').innerHTML = "Follow";
+                    hasFollowed = false;
+                   
+                }
+                else{
+                    document.body.style.backgroundColor = "rgba(0, 0, 255, 0.1)";
+                    document.getElementById('followBtn').innerHTML = "Unfollow";
+                    hasFollowed = true;
+                }
+
+                setFollowedState(eventID, hasFollowed);
+
+                // const followStateJsonText = localStorage.getItem('followStateJson');
+                // const followStateJson = followStateJsonText ? JSON.parse(followStateJsonText) : {};
+                // const followState = followStateJson[eventID] ? followStateJson[eventID] : 'unfollowed';
+
+                // if(followState == 'followed'){
+                //     followStateJson[eventID] = 'unfollowed';
+
+                //     // localStorage.setItem('followState', 'unfollowed');
+                //     document.getElementById('followBtn').innerHTML = "Follow";
+                //     document.body.style.backgroundColor = "white";
+                // }
+                // else{
+                //     followStateJson[eventID] = 'followed';
+                //     // localStorage.setItem('followState', 'followed');
+                //     document.getElementById('followBtn').innerHTML = "Unfollow";
+                //     document.body.style.backgroundColor = "rgba(0, 0, 255, 0.1)";
+                // }
+
+                // localStorage.setItem('followStateJson', JSON.stringify(followStateJson));
+
+            //   change backgroundColor to blue of whole page
+           
+
+            };
 
 
             document.getElementById('shareBtn').onclick = function() {

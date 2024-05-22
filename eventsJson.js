@@ -1,5 +1,5 @@
     //go 2
-console.log("eventsJson.js loaded");
+// console.log("eventsJson.js loaded");
 var eventsJson = [
     {
         "name": "Schwitzen im Sitzen",
@@ -68,8 +68,7 @@ var eventsJson = [
             "image": "burningcinema.png",
             "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
             "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
-            "email": "deggendorf@unifilm.de",
-            "ratings": 4.9
+            "email": "deggendorf@unifilm.de"
         },
         "type": "inPerson",
         "location": {
@@ -184,8 +183,7 @@ Phantasie- und humorvolles Märchenabenteuer über ein kleines Mädchen, das von
             "image": "burningcinema.png",
             "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
             "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
-            "email": "deggendorf@unifilm.de",
-            "ratings": 4.9
+            "email": "deggendorf@unifilm.de"
         },
         "type": "inPerson",
         "location": {
@@ -226,8 +224,7 @@ Die vielfältige, fantastische Welt und der spielerische Geist des legendären R
             "image": "burningcinema.png",
             "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
             "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
-            "email": "deggendorf@unifilm.de",
-            "ratings": 4.9
+            "email": "deggendorf@unifilm.de"
         },
         "type": "inPerson",
         "location": {
@@ -267,8 +264,7 @@ Basierend auf der Bestseller-Reihe von Suzanne Collins begeisterten die "Die Tri
             "image": "burningcinema.png",
             "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
             "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
-            "email": "deggendorf@unifilm.de",
-            "ratings": 4.9
+            "email": "deggendorf@unifilm.de"
         },
         "type": "inPerson",
         "location": {
@@ -308,8 +304,7 @@ Pixar ist ein Jahr nach RATATOUILLE mit WALL-E erneut ein Meilenstein im Genre d
             "image": "burningcinema.png",
             "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
             "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
-            "email": "deggendorf@unifilm.de",
-            "ratings": 4.9
+            "email": "deggendorf@unifilm.de"
         },
         "type": "inPerson",
         "location": {
@@ -1149,8 +1144,7 @@ Produced by: Mark Swift
             "image": "burningcinema.png",
             "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
             "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
-            "email": "deggendorf@unifilm.de",
-            "ratings": 4.9
+            "email": "deggendorf@unifilm.de"
         },
         "type": "inPerson",
         "location": {
@@ -1202,8 +1196,7 @@ Euer Brennendes Kino
                 "image": "burningcinema.png",
                 "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
                 "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
-                "email": "deggendorf@unifilm.de",
-                "ratings": 4.9
+                "email": "deggendorf@unifilm.de"
             },
             "type": "inPerson",
             "location": {
@@ -1217,7 +1210,7 @@ Euer Brennendes Kino
 
 
     {
-        "name": "Campus Party Burning Cinema",
+        "name": "Hunger Games X Campus Party",
         "date": "23.05.2024",
         "timeEntry": "18:30",
         "timeStart": "20:00",
@@ -1257,8 +1250,7 @@ Your Burning Cinema Team 😁` },
             "image": "burningcinema.png",
             "website": "https://www.unifilm.de/studentenkinos/Deggendorf",
             "instagram": "https://www.instagram.com/hochschulkino_deggendorf/",
-            "email": "deggendorf@unifilm.de",
-            "ratings": 4.9
+            "email": "deggendorf@unifilm.de"
         },
         "type": "inPerson",
         "location": {
@@ -1514,9 +1506,8 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
                 `
         },
         "location": {
-            "name": "THD ITC2+ 0.16",
-            "maps": "https://maps.app.goo.gl/boccmURbaNBVo5rAA",
-            "description": ""
+            "name": "Veilchengasse 2, 3. Floor",
+            "maps": "https://maps.app.goo.gl/1bcnCicBfB1xVkCt5"
         },
         "organizer":
         {
@@ -1543,8 +1534,7 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
         },
         "location": {
             "name": "THD ITC2+ 0.16",
-            "maps": "https://maps.app.goo.gl/boccmURbaNBVo5rAA",
-            "description": ""
+            "maps": "https://maps.app.goo.gl/boccmURbaNBVo5rAA"
         },
         "organizer":
         {
@@ -1619,6 +1609,7 @@ Ticket Sale for the Trip:
 
 
     {
+        "postponed": "due to bad weather",
         "name": "Spring Picnic",
         "date": "23.05.2024",
         "timeStart": "17:00",
@@ -1639,7 +1630,7 @@ See you there!! ☀️😋☀️😋
         "location": {
             "name": "Donau Deggendorf",
             "maps": "https://maps.app.goo.gl/gWD9P1hQo8eaqKZK9",
-            "description": ""
+        
         },
         "organizer":
         {

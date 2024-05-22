@@ -302,3 +302,46 @@ function getImages(eventID){
 
 
 
+// const followStateJsonText = localStorage.getItem('followStateJson');
+// const followStateJson = followStateJsonText ? JSON.parse(followStateJsonText) : {};
+// const followState = followStateJson[eventID] ? followStateJson[eventID] : 'unfollowed';
+
+// if (followState == 'followed') {
+//     followStateJson[eventID] = 'unfollowed';
+
+//     // localStorage.setItem('followState', 'unfollowed');
+//     document.getElementById('followBtn').innerHTML = "Follow";
+//     document.body.style.backgroundColor = "white";
+// }
+// else {
+//     followStateJson[eventID] = 'followed';
+//     // localStorage.setItem('followState', 'followed');
+//     document.getElementById('followBtn').innerHTML = "Unfollow";
+//     document.body.style.backgroundColor = "rgba(0, 0, 255, 0.1)";
+// }
+
+// localStorage.setItem('followStateJson', JSON.stringify(followStateJson));
+
+function setFollowedState(eventID, isFollowed){
+    const followStateJson = getFollowedStateJson();
+    followStateJson[eventID] = isFollowed ? 'followed' : 'unfollowed';
+    localStorage.setItem('followStateJson', JSON.stringify(followStateJson));
+
+    console.log(`Event ${eventID} is : ${followStateJson[eventID]}`);
+}
+
+
+function getFollowedStateJson(){
+    const followStateJsonText = localStorage.getItem('followStateJson');
+    return followStateJsonText ? JSON.parse(followStateJsonText) : {};
+}
+
+function hasFollowedThisEvent(eventID){
+    const followStateJson = getFollowedStateJson();
+    const followState = followStateJson[eventID] ? followStateJson[eventID] : 'unfollowed';
+    const isFollowed = followState == 'followed';
+    if(isFollowed){
+        console.log(`Event ${eventID} is : ${followState}`);
+    }
+    return isFollowed;
+}

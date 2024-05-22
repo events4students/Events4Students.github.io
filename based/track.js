@@ -42,7 +42,7 @@ function main(){
 
 
   if (isNewUser) {
-    console.log('First visit:', currentDateTimeString);
+    // console.log('First visit:', currentDateTimeString);
     uniqueUserRef.set({
       url:url,
       dateTime: currentDateTimeString,
@@ -55,7 +55,7 @@ function main(){
 
 
     if (firstVisitToday){
-      console.log('First Visited today:', currentDateTimeString);
+      // console.log('First Visited today:', currentDateTimeString);
       uniqueUserRef.set({
         url: url,
         dateTime: currentDateTimeString,
@@ -63,7 +63,7 @@ function main(){
       });
 
     }else{
-      console.log('Already visited today:', currentDateTimeString);
+      // console.log('Already visited today:', currentDateTimeString);
     }
   }
 
@@ -97,6 +97,29 @@ function main(){
   const liveRightNow = liveRightNowRef.push();
   liveRightNow.set({url:url, startedAt: currentDateTimeString, browser: browser});
   liveRightNow.onDisconnect().remove();
+
+
+
+  const datesRef = db.ref('dates');
+  // datesRef.set([currentDateTimeString])
+
+  // get dates list from db
+  datesRef.once('value', (snapshot) => {
+    const dates = snapshot.val();
+    // console.log('dates:', dates);
+
+    const dateDay = currentDateTimeString.split(' ')[0];
+    // console.log("dateDay:", dateDay);
+    // add current date if not exists
+    if (!dates.includes(dateDay)){
+     
+    }
+  });
+
+
+  //add if not exists already
+  // dateRef.set(currentDateTimeString);
+
 
 
 }
