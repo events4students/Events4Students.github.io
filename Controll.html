@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- <link rel="stylesheet" href="colors.css"> -->
+ <script>
+
+const trackName = "shouldTrack"
+
+shouldSyncToGithubBackup = localStorage.getItem(trackName)
+localStorage.setItem(trackName,'false');
+
+ </script>
+ <!-- <script src="test.js" type="text/javascript" charset="utf-8"></script> -->
+<title>Clear</title>
+<style>
+</style> l
+</head>
+<body>
+    
+<span id="displayText"> </span>  
+<button id="toggleSync">toggleSync</button>
+<!-- <a id="buttonLink" target="_blank" href="Exercise.html">Exercises</a> -->
+<script>
+
+    // window.removeEventListener("beforeunload", beforeUnloadPage);
+    localStorage.setItem(trackName,shouldSyncToGithubBackup);
+// window.removeEventListener("beforeunload", storeViewEndLocal);
+
+
+function appendText(text,size="50",color="black") {
+    var errorMessage = document.createElement("span");
+    errorMessage.textContent = text;
+    errorMessage.style.color = color;
+    errorMessage.style.fontSize = size+"px";
+    document.body.appendChild(errorMessage);
+}
+function toggleSync(){
+  let shouldSyncToGithub = localStorage.getItem(trackName) || "true";
+   if(shouldSyncToGithub === "true"){
+      displayText("SYNC ON");
+      // console.log("sync is set to false");
+      localStorage.setItem(trackName,'false');
+   }else{
+      displayText("SYNC OFF");
+       // console.log("sync is set to true");
+      localStorage.setItem(trackName,'true');
+   }
+   displaySync();
+}
+function displayText(textToDisplay){
+  document.getElementById("displayText").innerHTML = textToDisplay;
+}
+function displaySync(){
+   let shouldSyncToGithub = localStorage.getItem(trackName) || "true";
+   if(shouldSyncToGithub === "true"){
+      displayText("SYNC ON");
+   }else{
+      displayText("SYNC OFF");
+   }
+}
+function clearCashe(){
+    appendText("clearedCashe",25)
+    console.log("CLEAR");
+    shouldSyncToGithubBackup = localStorage.getItem(trackName);
+    localStorage.clear();
+    localStorage.setItem(trackName,shouldSyncToGithubBackup);
+    displaySync();
+}
+displaySync();
+
+// document.getElementById("clearSyncTimer").addEventListener("click", function() {localStorage.clear(); appendText("clearedSyncTimer",25)});
+// document.getElementById("clearCashe").addEventListener("click",clearCashe);
+document.getElementById("toggleSync").addEventListener("click",toggleSync);
+
+function setBackgroundColor(color){
+     document.body.style.backgroundColor = color;
+}
+
+
+
+
+
+</script>
+
+<style>
+    :root {
+    --bodyBackground: rgba(46, 42, 35, 1.0);
+    --button: rgba(255,255,255,.2);
+    --text: rgba(255, 255, 255, 0.8);
+    --div: rgba(0,0,0,.15);
+    --task:  rgba(153, 217, 250, 0.8);
+    /*--tip: rgb(0,0, 0,0.2);*/
+    --tip: rgb(208, 142, 39,1);
+    /*--tip: rgb(208, 142, 39,0.8);*/
+    /*--solution: rgb(94, 214, 90, 0.8);*/
+    --solution: rgb(94, 214, 90, 0.8);
+    --shortcutInfo: rgb(100, 100, 100, 0.5);
+    --example: rgb(208, 142, 39,1);
+  }
+/*@font-face {
+    src: url(FredokaOne-Regular.ttf);
+    font-family: 'myImportedFont';
+}*/
+html, body, * { touch-action: manipulation; }
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  background: var(--bodyBackground);
+  display: grid;
+  place-items: center;
+}
+body * {
+  /*font-family: 'myImportedFont', sans-serif;*/
+  font-size: 1.2rem;
+  color: var(--text);
+}
+button,select {
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    background: var(--button);
+    padding: 12px 20px;
+  }
+
+option {
+  background-color:  var(--bodyBackground);
+}
+
+input{
+  border: none;
+  border-radius: 10px;
+   border-color: transparent;
+     /*outline: none;*/
+
+}
+/*
+option:checked, option:hover {
+    color: red;
+    background: green;
+      background-color: #488f8f; 
+}
+
+option:hover {
+  background-color: #488f8f; 
+} 
+
+
+::selection {
+  color: red;
+  background: yellow;
+}*/
+</style>
+
+
+</body>
+</html>
