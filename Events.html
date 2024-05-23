@@ -367,8 +367,10 @@
             <select id="categoryFilter">
                 <option value="any">Any Category</option>
                 <option value="followed">Followed</option>
-                <option value="[Calendar page]">[Calendar page]</option>
-                <option value="[Upload Image page]">[Upload Image page]</option>
+                <option value="[Jobs]">[Jobs]</option>
+                <option value="[Mensa]">[Mensa]</option>
+                <option value="[Calendar]">[Calendar]</option>
+                <option value="[Upload Image]">[Upload Image]</option>
 
         
                 <!-- <option value="sport">Sports</option>
@@ -682,10 +684,16 @@ function main() {
 
             const selectedValue = filterElement.value;
 
-            if(selectedValue == '[Calendar page]'){
+             if (selectedValue == '[Jobs]') {
+                window.location.href = "Jobs/Pfaffinger.html"
+                return;
+            } else if (selectedValue == '[Mensa]') {
+                window.location.href = "Mensa/index.html"
+                return;
+            }else if(selectedValue == '[Calendar]'){
                 window.location.href = "Calendar.html"
                 return;
-            } else if (selectedValue == '[Upload Image page]') {
+            } else if (selectedValue == '[Upload Image]') {
                 window.location.href = "UploadImage.html"
                 return;
             }

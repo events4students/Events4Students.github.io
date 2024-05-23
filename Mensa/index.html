@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Display</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .header{
+            position: relative;
+            background-color: #f2f2f2;
+            width: 100%;
+            display: flex;
+            /* have the first element be in the left of page the second item in center and the third item in the right of the page */
+            justify-content: space-between;
+            
+
+
+        }
+        h2{
+            /* display: inline; */
+            /* text-align: center; */
+            /* padding: 20px 0; */
+        }
+        #back{
+            /* display: inline;     */
+            background-color: orange;
+            border-radius: 40px;
+            padding: 20px 30px;
+            /* width: 70px; */
+            /* height: 50px; */
+            font-weight: bold;
+            font-size: larger;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <a id="back" href="../Events.html">Back</a>
+<h2>Mensa Deggendorf</h2>
+<h2></h2>
+</div>
+
+
+<div id="csvTable"></div>
+
+<script>
+    const csvData = `datum;tag;warengruppe;name;kennz;preis;stud;bed;gast
+24.05.2024;Fr;HG1;Apfel- und Blaubeerpfannkuchen mit Vanillesoße (8,AA,C,G);V;3,10 / 3,90 / 4,60;3,10;3,90;4,60
+24.05.2024;Fr;HG2;Seelachs auf Bio-Spaghetti mit Pesto (3,AA,D,G,J);F;4,70 / 5,70 / 6,20;4,70;5,70;6,20
+24.05.2024;Fr;B1;Gemischter Salat (3,I,L);V;1,30 / 1,50 / 2,00;1,30;1,50;2,00
+24.05.2024;Fr;N1;Veganer Apfelpudding (1);VG;1,20 / 1,50 / 1,70;1,20;1,50;1,70
+27.05.2024;Mo;HG1;Vegane Gemüse-Tortellini mit Tomatensahnesoße (A,AA,AD);VG;2,80 / 3,40 / 4,40;2,80;3,40;4,40
+27.05.2024;Mo;HG2;Geflügelfrikadelle mit Wedges und Paprikasalsa (1,3,16,A,AA,C);G;3,10 / 3,90 / 4,60;3,10;3,90;4,60
+27.05.2024;Mo;HG3;Frischer Spargel mit Sauce Hollandaise und Petersilienkartoffel (1,3,4,5,C,G,I);V;6,00 / 7,00 / 7,50;6,00;7,00;7,50
+27.05.2024;Mo;B1;Gemischter Salat (3,I,L);V;1,30 / 1,50 / 2,00;1,30;1,50;2,00
+27.05.2024;Mo;N1;Bio-Vanillejoghurt (G);B,V;1,00 / 1,20 / 1,60;1,00;1,20;1,60
+28.05.2024;Di;HG1;Veganer Milchreis mit Kirschgrütze (AD);VG;2,00 / 2,80 / 3,60;2,00;2,80;3,60
+28.05.2024;Di;HG2;Currywurst mit Twister (3,I,J);S,R;4,50 / 5,50 / 6,00;4,50;5,50;6,00
+28.05.2024;Di;B1;Gemischter Salat (3,I,L);V;1,30 / 1,50 / 2,00;1,30;1,50;2,00
+28.05.2024;Di;N1;Creme Caramel (C,F,G);V;1,20 / 1,50 / 1,70;1,20;1,50;1,70
+29.05.2024;Mi;HG1;Bayerische Gemüsenudeln mit Lauchsoße (3,A,AA,AD,I);VG;2,00 / 2,80 / 3,60;2,00;2,80;3,60
+29.05.2024;Mi;HG2;Nasi Goreng (1,3,A,AA,F,I);G;4,20 / 5,20 / 5,70;4,20;5,20;5,70
+29.05.2024;Mi;B1;Gemischter Salat (3,I,L);V;1,30 / 1,50 / 2,00;1,30;1,50;2,00
+29.05.2024;Mi;N1;Himbeerpudding - vegan (1,AD,F);VG;1,20 / 1,50 / 1,70;1,20;1,50;1,70
+31.05.2024;Fr;HG1;Apfelküchel in Zimt und Zucker mit Vanillesoße (3,A,AA,C,G);V;2,80 / 3,40 / 4,40;2,80;3,40;4,40
+31.05.2024;Fr;HG2;Seelachs natur gebraten mit Dillmayonaise und Salzkartoffeln (3,5,9,A,AA,C,D,G,J);F;4,20 / 5,20 / 5,70;4,20;5,20;5,70
+31.05.2024;Fr;B1;Gemischter Salat (3,I,L);V;1,30 / 1,50 / 2,00;1,30;1,50;2,00
+31.05.2024;Fr;N1;Schokoäpfel (3,G);V;1,00 / 1,20 / 1,60;1,00;1,20;1,60
+`;
+
+    function parseCSV(csv, delimiter = ';') {
+        const rows = csv.trim().split('\n');
+        const headers = rows[0].split(delimiter);
+        const data = rows.slice(1).map(row => row.split(delimiter));
+        return { headers, data };
+    }
+
+    function generateTable({ headers, data }) {
+        const table = document.createElement('table');
+
+        const thead = table.createTHead();
+        const headerRow = thead.insertRow();
+        headers.forEach(header => {
+            const th = document.createElement('th');
+            th.textContent = header;
+            headerRow.appendChild(th);
+        });
+
+        const tbody = table.createTBody();
+        data.forEach(row => {
+            const tr = tbody.insertRow();
+            row.forEach(cell => {
+                const td = tr.insertCell();
+                td.textContent = cell;
+            });
+        });
+
+        return table;
+    }
+
+    const csvObject = parseCSV(csvData);
+    const table = generateTable(csvObject);
+    document.getElementById('csvTable').appendChild(table);
+</script>
+
+</body>
+</html>
