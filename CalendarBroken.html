@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="based/app.js"></script>
+    <script src="based/base.js"></script>
+    <script src="based/track.js"></script>
+
+    <script src="eventsJson.js"></script>
+    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+    
+<title>Event Calendar</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .day {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
+  .event {
+    background-color: #e0e0e0;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="calendar" id="calendar"></div>
+
+<script>
+
+
+
+  function main(){ 
+      const calendarContainerElement = document.getElementById('calendar');
+      const calendar = {};
+
+
+     eventsJson.forEach((event, index) => {
+
+      const eventID = index;
+      const eventInfo = {
+        name: event.name,
+        date: event.date,
+        startTime: event.timeStart,
+        endTime: event.timeEnd,
+      };
+
+     
+      let endTime = calculateEndTime(eventID);
+   
+
+      const dateTime = calculateDateTime(event.date);
+      console.log(dateTime);
+      const dayIndex = dateTime.getDay();
+
+      if (!calendar[dayIndex]) {
+        calendar[dayIndex] = [];
+      }
+
+      calendar[dayIndex].push(eventInfo);
+    });
+    createCalendarHTML();
+  }
+  
+
+
+
+
+  // Function to create calendar days
+  function createCalendarHTML() {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    
+    days.forEach(day => {
+      const dayElement = document.createElement('div');
+      dayElement.classList.add('day');
+      dayElement.textContent = day;
+      calendarContainerElement.appendChild(dayElement);
+    });
+
+    //take dates from calendar {}
+    //sort them by date
+
+    const sortedCalendar = Object.entries(calendar).sort((a, b) => a[0] - b[0]);
+    console.log(sortedCalendar);
+
+   
+    sortedCalendar.forEach(([dayIndex, eventInfos]) => {
+      eventInfos.forEach(eventInfo => {
+        const eventElement = document.createElement('div');
+        eventElement.classList.add('event');
+        // eventElement.textContent = event.name;
+        eventElement.textContent = `${eventInfo.name} - ${eventInfo.startTime} to ${eventInfo.endTime}`;
+
+        calendarContainerElement.children[dayIndex].appendChild(eventElement);
+      });
+    });
+
+
+  }
+
+
+  // Simulated JSON data
+    // {
+    //   "name": 'Meet the Prof: Wolfgang Dorner',
+    //     "date": "09.07.2024",
+    //       "timeStart": "17:30",
+    //         "timeEnd": "19:00",
+    //           "price": "free",
+    //             "category": "special",
+    //               "language": "de+en",
+    //                 "type": "inPerson",
+    //                   "imagePaths": ["dorner.jpeg"],
+    //                     "descriptionLong": {
+    //     "en": `
+    //           Come and ask your questions to Prof. Dr. Wolfgang Dorner. It's a great opportunity to get to know him better and to ask him about his research and teaching. It's a casual event, so feel free to ask anything you want. We're looking forward to seeing you there!
+    //               `
+    //   },
+    //   "location": {
+    //     "name": "THD ITC2+ 0.16",
+    //       "maps": "https://maps.app.goo.gl/boccmURbaNBVo5rAA"
+    //   },
+    //   "organizer":
+    //   {
+    //     "name": "Luisa Friebel",
+    //       "image": "luisa.jpeg",
+    //         "website": "",
+    //           "email": "luisa.friebel@stud.th-deg.de"
+    //   }
+    // },
+
+
+  document.addEventListener("DOMContentLoaded", main);
+
+
+  
+</script>
+
+</body>
+</html>

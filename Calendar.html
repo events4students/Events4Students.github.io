@@ -7,6 +7,8 @@
     <script src="based/app.js"></script>
     <script src="based/base.js"></script>
     <script src="based/track.js"></script>
+        <script src="eventsJson.js"></script>
+        <script src="main.js" type="text/javascript" charset="utf-8"></script>
     
 <title>Event Calendar</title>
 <style>
@@ -41,32 +43,62 @@
     margin-bottom: 5px;
     border-radius: 5px;
   }
+
+    button {
+            border: none;
+            border-radius: 50px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+           filter: brightness(96%); 
+        }
+          #backBtn {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background-color: orange;
+            border-radius: 40px;
+            padding: 20px 30px;
+            /* width: 70px; */
+            /* height: 50px; */
+            font-weight: bold;
+            font-size: larger;
+            /* font-size: 16px; */
+        }
+
 </style>
 </head>
 <body>
-
+    <button id="backBtn"><i class="fas fa-arrow-left"></i>Back</button>
 <div class="calendar" id="calendar"></div>
 
 <script>
   // Simulated JSON data
-  const events = [
-    { name: "Event 1", date: "2024-05-16", startTime: "10:00", endTime: "12:00" },
-    { name: "Event 2", date: "2024-05-17", startTime: "14:00", endTime: "16:00" },
-    { name: "Event 3", date: "2024-05-17", startTime: "17:00", endTime: "19:00" },
-    { name: "Event 4", date: "2024-05-18", startTime: "09:00", endTime: "11:00" }
-    // Add more events as needed
-  ];
+  // const events = [
+  //   { name: "Event 1", date: "2024-05-16", startTime: "10:00", endTime: "12:00" },
+  //   { name: "Event 2", date: "2024-05-17", startTime: "14:00", endTime: "16:00" },
+  //   { name: "Event 3", date: "2024-05-17", startTime: "17:00", endTime: "19:00" },
+  //   { name: "Event 4", date: "2024-05-18", startTime: "09:00", endTime: "11:00" }
+  //   // Add more events as needed
+  // ];
 
   const calendar = document.getElementById('calendar');
 
   // Function to render events
   function renderEvents() {
-    events.forEach(event => {
+   eventsJson.forEach((event, index) => {
+      const eventID = index;
       const eventElement = document.createElement('div');
       eventElement.classList.add('event');
-      eventElement.textContent = `${event.name} - ${event.startTime} to ${event.endTime}`;
+      eventElement.textContent = `${event.name} - ${event.timeStart} to ${event.timeEnd}`;
 
-      const date = new Date(event.date);
+
+      const dateInfo = calculateDateInfo(event.date);
+      const date = dateInfo["date"]
       const dayIndex = date.getDay();
 
       calendar.children[dayIndex].appendChild(eventElement);
@@ -87,6 +119,11 @@
 
   createCalendar();
   renderEvents();
+
+
+    document.getElementById("backBtn").onclick = function () {
+       window.location.href = "Events.html"
+      };
 </script>
 
 </body>

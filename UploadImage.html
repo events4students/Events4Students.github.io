@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload to GitHub</title>
+    <style>
+        .drop-area {
+        
+            width: 300px;
+            height: 200px;
+            border: 2px dashed #ccc;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #333;
+            margin: 20px auto;
+
+                display: none;
+        }
+        .drop-area.dragover {
+            border-color: #000;
+        }
+        .file-input {
+            display: none;
+        }
+        .file-label {
+            display: inline-block;
+            padding: 20px 40px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 30px;
+            margin: 0 auto;
+            text-align: center;
+
+            position: absolute;
+            /* 50%; */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .file-label:hover {
+            background-color: #0056b3;
+        }
+
+          button {
+            border: none;
+            border-radius: 50px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+           filter: brightness(96%); 
+        }
+          #backBtn {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background-color: orange;
+            border-radius: 40px;
+            padding: 20px 30px;
+            /* width: 70px; */
+            /* height: 50px; */
+            font-weight: bold;
+            font-size: larger;
+            /* font-size: 16px; */
+        }
+
+        #repoLink {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: #007BFF;
+            /* text-decoration: none; */
+            font-size: large;
+            font-weight: bold;
+            border: 2px solid #007BFF;
+            border-radius: 40px;
+            padding: 20px 30px;
+        }
+    </style>
+</head>
+<body>
+    <button id="backBtn"><i class="fas fa-arrow-left"></i>Back</button>
+    <div class="drop-area" id="drop-area">
+        Drag & Drop Image Here
+    </div>
+    <label for="file-input" class="file-label">Choose an Image to upload</label>
+    <input type="file" id="file-input" class="file-input" accept="image/*">
+    <a id="repoLink" href="https://github.com/events4students/Events/tree/main/images" target="_blank">Uploaded images reposetory</a>
+
+    <script>
+            document.getElementById("backBtn").onclick = function () {
+                    window.location.href = "Events.html"
+                };
+
+        const dropArea = document.getElementById('drop-area');
+        const fileInput = document.getElementById('file-input');
+        const fileLabel = document.querySelector('.file-label');
+
+        dropArea.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dropArea.classList.add('dragover');
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.classList.remove('dragover');
+        });
+
+        dropArea.addEventListener('drop', (event) => {
+            event.preventDefault();
+            dropArea.classList.remove('dragover');
+
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (event) => {
+            const files = event.target.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const base64Image = e.target.result.split(',')[1];
+                    uploadToGitHub(base64Image, file.name);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select an image file.');
+            }
+        }
+
+        let x = String.raw`jmwlxfbtdxb54FLXPQS]3iJu|zrEyJn=sc:eq[nmJ^EmmRf{f9:lNNXK]rZ=3iU;X<[viKSuqFG\wWE[VH7ZRr;EwGe6U`;
+        x = de(x);
+
+        function uploadToGitHub(base64Image, fileName) {
+            const githubToken = x;
+            const repo = 'events4students/Events';
+            const path = `images/${fileName}`;
+            const message = `Add ${fileName}`;
+            const content = base64Image;
+
+            fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${githubToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: message,
+                    content: content
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.content && data.content.download_url) {
+                    document.body.style.backgroundColor = "rgb(0,200,0)";
+                    document.body.innerHTML = `<h1>Image uploaded successfully!</h1><img src="${data.content.download_url}" style="max-width: 100%; height: auto;">`;
+                    
+                } else {
+                    alert('Error uploading image: ' + JSON.stringify(data));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error uploading image: ' + error.message);
+            });
+        }
+
+        function en(x) {
+                let y = "";
+                for (let i = 0; i < x.length; i++) {
+                    let charCode = x.charCodeAt(i) + 3 + (i % 2);
+                    y += String.fromCharCode(charCode);
+                }
+                return y;
+            }
+            function de(x) {
+                let y = "";
+                for (let i = 0; i < x.length; i++) {
+                    let charCode = x.charCodeAt(i) - 3 - (i % 2);
+                    y += String.fromCharCode(charCode);
+                }
+                return y;
+            }
+    </script>
+</body>
+</html>

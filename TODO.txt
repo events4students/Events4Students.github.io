@@ -1,0 +1,1 @@
+rename timeEnd to endTime and startTime. make it backwards compatible and start naming them the new way

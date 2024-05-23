@@ -345,3 +345,36 @@ function hasFollowedThisEvent(eventID){
     }
     return isFollowed;
 }
+
+
+
+
+function calculateDateTime(eventID) {
+    const event = eventsJson[eventID];
+    const dateInfo = calculateDateInfo(event.date);
+    const date = dateInfo["date"];
+    const startTimeString = getMyTimeString(eventID);
+
+    const [hours, minutes] = startTimeString.split(':').map(Number); //"19:30" => [19,30]
+    const totalMinutes = hours * 60 + minutes + minutesToAdd;
+    const newHours = Math.floor(totalMinutes / 60);
+    const newMinutes = totalMinutes % 60;
+
+    const newDateWithTime = new Date(date);
+    newDateWithTime.setHours(newHours);
+    newDateWithTime.setMinutes(newMinutes);
+
+    console.log("date:",date,"newDateWithTime:", newDateWithTime);
+    return newDateWithTime;    
+}
+
+function calculateEndTime(eventID){
+    const event = eventsJson[eventID];
+    let endTime = event.endTime;
+    if (!endTime) {
+        const timeStart = event.timeStart.split(':');
+        const hours = parseInt(timeStart[0]) + 2;
+        endTime = `${hours}:${timeStart[1]}`;
+
+    }
+}

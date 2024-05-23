@@ -320,9 +320,7 @@
             <h1 id="event-name">Event Name</h1>
            
         </div>
-        <div id="images">
-                <img src="images/icons/upload.png" alt="img">
-        </div>
+        <div id="images"></div>
         <!-- <div id="descriptionLong">Description of the event goes here. You can provide detailed information about the event.</div>
         <div id="date">Date: 16.05.2024</div>
         <div id="time">Time: 6PM/18Uhr</div>
@@ -331,21 +329,20 @@
        
 
         <button id="downloadEventCalender">📆Download event for calender</button>
-        <div id="date">Date: <input type="date" id="date-input" ></div>
-        <div id="timeEntry">Time: <input type="time" id="timeEntry-input" ></div>
-        <div id="timeStart">Time: <input type="time" id="timeStart-input" ></div>
-        <div id="duration">Duration: <input type="number" id="duration-input" min="1" max="48" /></div>
-
-        
-        <!-- <a id="addToCalendar" href="">
-           Add to Google Calendar
-        </a> -->
-
-   
+        <div id="date">Date: </div>
+        <div id="timeEntry">Time: </div>
+        <div id="timeStart">Time: </div>
+        <div id="duration">Duration:</div>   
         <div id="location">Location: <input type="text" id="location-input" s></div>
         <div id="location-maps">Location: <input type="text" id="location-maps-input" s></div>
-
         <div id="online-link">Online Link: <a href="https://www.youtube.com/watch?v=DlDgj5LRujE" target="_blank">https://www.youtube.com/watch?v=DlDgj5LRujE</a></div>
+        <div id="price">Price</div>
+
+
+                <!-- <a id="addToCalendar" href="">
+                           Add to Google Calendar
+                        </a> -->
+
     
     <div id="descriptionLong">Description:<textarea id="descriptionLong-input"></textarea></div>
     
@@ -444,6 +441,39 @@
 
                 document.getElementById('event-name').innerHTML = event.name;
 
+
+
+
+
+                const dateInfo = calculateDateInfo(event.date);
+
+                document.getElementById('date').innerHTML = "📅 " + dateInfo["dateText"];
+                if (event.timeEntry) {
+                    document.getElementById('timeEntry').innerHTML = "🚪 " + event.timeEntry;
+                } else {
+                    document.getElementById('timeEntry').style.display = 'none';
+                }
+
+                document.getElementById('timeStart').innerHTML = getMyTimeString(eventID);
+                document.getElementById('duration').innerHTML = "⏳ " + event.duration;
+                document.getElementById('language').innerHTML = "" + languageEmoji;
+
+
+                let price = event.price;
+
+                if(event.priceChanged){
+                    const priceChanged = event.priceChanged;
+                    const priceChangedHTML = "<span style='text-decoration: line-through; color: red;'>" + price + "</span> <span style='color: rgb(0,200,0);'>" + priceChanged + "</span>";
+                    price = priceChangedHTML;
+                }
+
+                document.getElementById('price').innerHTML = "💰 " + price;
+
+    // price
+
+
+
+
                 const userLanguage = getLanguage();
                 console.log(userLanguage);
                
@@ -453,14 +483,27 @@
                     descriptionLong = firstDescriptionLong;
                 }
 
-                const RENDER_NEW_LINE = true;
-                if(RENDER_NEW_LINE){
-                    
-                    //remove the first new lines
-                    descriptionLong = descriptionLong.replace(/^\n*/, "");
-                
-                    descriptionLong = descriptionLong.replace(/\n/g, "<br>");
 
+                 
+                // const RENDER_NEW_LINE = true;
+                // if(RENDER_NEW_LINE){
+                //     //remove the first new lines
+                //     descriptionLong = descriptionLong.replace(/^\n*/, "");
+                //     descriptionLong = descriptionLong.replace(/\n/g, "<br>");
+                // }
+
+                descriptionLong = formatStringRemoveStartNewLine(descriptionLong);
+                descriptionLong = formatStringHTMLShowNewLine(descriptionLong);
+                descriptionLong = formatStringMakeLinks(descriptionLong);
+
+                function formatStringHTMLShowNewLine(text){
+                    return text.replace(/\n/g, "<br>");
+                }
+                function formatStringRemoveStartNewLine(text){
+                    return text.replace(/^\n*/, "");
+                }
+                function formatStringMakeLinks(text){
+                    return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
                 }
 
 
@@ -478,18 +521,7 @@
 
 
                 
-                const dateInfo = calculateDateInfo(event.date);
-
-                document.getElementById('date').innerHTML = "📅 " + dateInfo["dateText"];
-                if(event.timeEntry){
-                    document.getElementById('timeEntry').innerHTML = "🚪 " + event.timeEntry;
-                }else{
-                    document.getElementById('timeEntry').style.display = 'none';
-                }
-               
-                document.getElementById('timeStart').innerHTML =  getMyTimeString(eventID);
-                document.getElementById('duration').innerHTML = "⏳ " + event.duration;
-                document.getElementById('language').innerHTML = "" + languageEmoji;
+              
                 
 
                 const eventType = event.type;
@@ -511,7 +543,7 @@
                 
                 document.getElementById('type').innerHTML = typeString;
                 if(hasLocation){
-                    document.getElementById('location').innerHTML = "📍 " + event.location.name +" "+ event.location.description+"";//📌
+                    document.getElementById('location').innerHTML = "📍 " + event.location.name;
                     document.getElementById('location-maps').innerHTML = "🗺️ " + getLinkElement(event.location.maps);
                     
                     

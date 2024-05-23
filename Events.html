@@ -367,6 +367,10 @@
             <select id="categoryFilter">
                 <option value="any">Any Category</option>
                 <option value="followed">Followed</option>
+                <option value="[Calendar page]">[Calendar page]</option>
+                <option value="[Upload Image page]">[Upload Image page]</option>
+
+        
                 <!-- <option value="sport">Sports</option>
                 <option value="cinema">Cinema</option>
                 <option value="international">International</option>
@@ -496,6 +500,20 @@ function main() {
             eventElement.querySelector(".event-price").style.display = "none";
         }else{
             eventElement.querySelector(".event-price").innerHTML = price;
+        }
+
+
+        if(event.priceChanged){
+            const priceChanged = event.priceChanged;
+            const priceChangedText = "✨"+ priceChanged +"✨";
+            const green = "rgb(0,200,0)";
+            const priceChangedHTML = `<span style="color:${green};" >${priceChangedText}</span>`;
+            
+            // const toDisplay = priceChanged === "up" ? "🔺" : "🔻";
+
+            eventElement.querySelector(".event-price").innerHTML = priceChangedHTML;
+            //change background color of whole event
+            eventElement.style.backgroundColor = "rgba(0, 255, 0, 0.1)";
         }
 
        
@@ -661,6 +679,17 @@ function main() {
         const filterElement = document.getElementById(id);
 
         filterElement.onchange = function () {
+
+            const selectedValue = filterElement.value;
+
+            if(selectedValue == '[Calendar page]'){
+                window.location.href = "Calendar.html"
+                return;
+            } else if (selectedValue == '[Upload Image page]') {
+                window.location.href = "UploadImage.html"
+                return;
+            }
+
         eventElementAndDateArray.forEach((eventElementAndDate) => {
             const passesFilter = checkIfPassesFilterCallback(eventElementAndDate,eventKeyName, filterElement.value);
             if (passesFilter) {
@@ -739,7 +768,7 @@ function main() {
             return true;
         }else if (filterText == 'followed') {
             return hasFollowedThisEvent(eventID);
-        }
+        } 
         else if (filterText == eventValue) {
             return true;
         } else {

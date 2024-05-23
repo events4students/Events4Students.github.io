@@ -1549,6 +1549,7 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
     
 
     {
+        "priceChanged": "price changed to: [free]",
         "name": "Nurnberg Historical Exploration",
         "date": "25.05.2024",
         "timeStart": "8:30",
@@ -1562,6 +1563,16 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
 
         "descriptionLong": {
             "en": `
+
+            ////////////
+
+            [Update from the organizers on the 23.05.2024 9:48AM in the DIT SS24 International Students whatsapp group]
+Since we heard some complaints from people about the price and content of the trip please be informed we cancelled the guided tour and use our own tour with other ESN sections;
+we instead want to spend more time with them and enjoying the city, so there will be NO MORE FEE (=> FREE) for participating and instead you can just come along with us and the other ESN sections as long as you sign up
+https://docs.google.com/forms/d/e/1FAIpQLScjigchEExq2xlFKbap1WBOdTcXUe2N25tLUtE6mxc2zsFDjA/viewform?usp=sf_link
+
+
+////////////
         🏰🔍 Historical Exploration: Discovering Nuremberg's Rich Heritage 🗺📜
 
 Greetings, history enthusiasts!
@@ -1673,8 +1684,7 @@ Tuesday 21.05 at 7:30 pm in Room I001
     },
         "location": {
             "name": "THD I001",
-            "maps": "https://maps.app.goo.gl/YiuBS6LggWd9DPGb7",
-            "description": ""
+            "maps": "https://maps.app.goo.gl/YiuBS6LggWd9DPGb7"
         },
         "organizer":
         {
