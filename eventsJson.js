@@ -1369,12 +1369,46 @@ Studierende
         "language": "de",
         "type": "inPerson",
         "registration": "required",
-        "images": [],
+        "imagePaths": ["GROW.jpg"],
         "descriptionLong": {
             "de": `
+       ////////////////////////////
+
+
+       [EMAIL FROM 	AWP- und Sprachenzentrum <iris.bubenhofer@th-deg.de> Wed, 22 May 2024 10:24:29]
+
+Sehr geehrte Studierende,
+die kostenfreie Projektwoche
+GROW GründerWerkstatt
+„Spielerisch Startup Ideen entwickeln – Von der Idee zur Innovation"
+
+wird von 23. September 2024 bis einschließlich 27. September 2024 wieder an der TH Deggendorf stattfinden. Sichern Sie sich jetzt einen Platz dafür!
+
+Sie, die Studierenden der THD, haben hier die Möglichkeit anhand eines Unternehmensplanspiels eigenständig Geschäftsmodelle im Team zu entwickeln.
+
+Zusätzlich besteht die Möglichkeit sich die Projektwoche als AWP-Fach (2 ECTS-Punkte) anrechnen zu lassen.
+
+Bei diesem Projekt der Hans Lindner Stiftung und dem Zentrum für Gründungsförderung / Startup Campus der THD wird intensiv an einer eigenen Geschäftsidee gearbeitet und auch gelernt, wie man aus Trends Geschäftsideen generiert, bewertet und weiterentwickelt. (Es wird kein Vorwissen vorausgesetzt!)
+
+Am Ende der Projektwoche werden die entstandenen Geschäftsideen im Rahmen einer Pitchveranstaltung einer Jury vorgestellt und im Anschluss prämiert.
+
+Für die Teilnahme wird ein kurzes Motivationsschreiben („Darum möchte ich an der GROW GründerWerkstatt teilnehmen!") mit max. 500 Zeichen benötigt.
+
+Hier geht's zur Anmeldung: https://www.dahoam-in-niederbayern.de/veranstaltungen/grow-gruenderwerkstatt-126609/
+
+Aufgrund der Ausgestaltung der Projektwoche ist die Anwesenheit während der gesamten Woche verpflichtend.
+
+Bei allgemeinen Fragen zur Projektwoche können sich Interessierte per E-Mail bei Alina.Pollersbeck@Hans-Lindner-Stiftung.de oder telefonisch unter 08723/20-2994 melden.
+
+Für Studierende, Dozierende und Mitarbeitende der Hochschule ist die Projektwoche kostenfrei (inkl. Unterlagen und Zertifikat).
+
+Die maximale Teilnehmerzahl sind 20 Personen. Die Unterrichtssprache ist Deutsch.
+Mit freundlichen Grüßen
+i.A. Iris Bubenhofer
+
+
        
-       
-       
+       /////////////////////////
        
        die kostenfreie Projektwoche
 GROW GründerWerkstatt
@@ -1392,7 +1426,6 @@ Am Ende der Projektwoche werden die entstandenen Geschäftsideen im Rahmen einer
 
 Für die Teilnahme wird ein kurzes Motivationsschreiben („Darum möchte ich an der GROW GründerWerkstatt teilnehmen!") mit max. 500 Zeichen benötigt.
 
-Hier geht's zur Anmeldung: https://www.dahoam-in-niederbayern.de/veranstaltungen/grow-gruenderwerkstatt-126609/
 
 Aufgrund der Ausgestaltung der Projektwoche ist die Anwesenheit während der gesamten Woche verpflichtend.
 
@@ -1426,7 +1459,7 @@ Die Teilnahme an beiden Veranstaltungen ist für Studierende und Hochschulmitarb
         {
             "name": "THD",
             "image": "thd.png",
-            "website": "https://www.dahoam-in-niederbayern.de/veranstaltungen/grow-gruenderwerkstatt-126609/",
+            "website": " https://www.dahoam-in-niederbayern.de/veranstaltungen/grow-gruenderwerkstatt-126609/",
             "website2": "https://www.th-deg.de/de/veranstaltung?id=14143182",
             "email": "Alina.Pollersbeck@Hans-Lindner-Stiftung.de"
         }

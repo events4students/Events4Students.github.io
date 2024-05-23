@@ -492,9 +492,9 @@
                 //     descriptionLong = descriptionLong.replace(/\n/g, "<br>");
                 // }
 
+                descriptionLong = formatStringMakeLinks(descriptionLong);
                 descriptionLong = formatStringRemoveStartNewLine(descriptionLong);
                 descriptionLong = formatStringHTMLShowNewLine(descriptionLong);
-                descriptionLong = formatStringMakeLinks(descriptionLong);
 
                 function formatStringHTMLShowNewLine(text){
                     return text.replace(/\n/g, "<br>");
