@@ -1042,6 +1042,32 @@ P.S Dont forget to bring your own food😉😋
 
         "descriptionLong": {
             "de": `
+
+[Email from joerg.kunz@th-deg.de at Thu, 23 May 2024 15:43:43]
+
+﻿Sehr geehrte Professorinnen und Professoren,
+liebe Mitarbeitende,
+liebe THD-Family,
+
+die Hochschule wäre nicht das, was sie ist, wenn es Sie nicht gäbe.
+
+Deshalb laden wir Sie recht herzlich ein, mit uns Studierenden das 30-jährige Jubiläum am 06.06.2024 zu feiern.
+
+Besonders das WIR steht an dieser Veranstaltung im Vordergrund. Wir sind der studentische Konvent mit Konvent e. V. und den Vereinen VDBau, First Contact, UNITED AI, Market Mavens, COME, VWI, Wi-Project, ESN und das Hochschulkino, welche Anfang des Jahres beschlossen haben, dass wir 30 Jahre THD mit Ihnen gerne gemeinsam feiern wollen.
+
+Wir haben uns alle zusammengeschlossen, um die THD-Familie zusammenzubringen, sei es Studierende, die Hochschulleitung, Mitarbeitende, Professorinnen und Professoren oder auch Alumni.
+
+Kommen Sie doch gerne vorbei, geplant ist die Veranstaltung ab 18 Uhr im Bereich der K- und J-Gebäude. Für Essen und Trinken sorgen unsere studentischen Vereine. Genießen Sie in unserer Chillerlounge einen Aperol Sprizz oder kommen Sie in der Biergartenarea zusammen und ins Gespräch mit Ihren Kolleginnen und Kollegen sowie Ihren Studierenden.
+
+Vor dem J-Gebäude findet dann ab 20 Uhr die Party mit anschließenden Projektionen von unseren Medientechnikern statt. Bei schlechtem Wetter verlagert sich das Jubiläum in das D-Gebäude. Ein formeller Rahmen ist bei dieser Veranstaltung nicht geplant, es handelt sich hierbei, um ein Freudenfest, mit anschließender Party.
+
+Wir freuen uns riesig, Sie am 06.06 begrüßen zu dürfen.
+
+Der studentische Konvent + die teilnehmenden Vereine
+
+
+
+
        Wir feiern 30 Jahre THD! Mit DJ´s, Chillerlounge und hoffentlich schönen Wetter wollen wir den Geburtstag der THD feiern! Keine Reden oder Wiederreden....eine große Campusparty ist geplant. Kommt vorbei! Von Studis für Studis!
         `},
         "location": {
@@ -1817,6 +1843,40 @@ Kommen und erlebt eine unvergleichliche Party-Nacht🌟 #Beachpartyelypso #Khali
             "name": "Elypso",
             "image": "beachpartyElypso.jpg",
             "website": "https://www.instagram.com/p/C7Rncfgo2do/",
+        }
+    },
+
+
+    {
+        "name": 'BBQ at the Donau',
+        "date": "25.05.2024",
+        "timeStart": "16:30",
+        "price": "free",
+        "category": "bar",
+        "language": "de+en",
+        "type": "inPerson",
+        "imagePaths": ["bbq.jpeg"],
+        "descriptionLong": {
+            "en": `
+            Hello and Welcome, if you want to meet some co-student in your field, fell free to join at the 25.05. 16:30 at the BBQ station near the Donau.
+
+We would like to make a BBQ, if you want to eat something please enter your name and bring the meat/veggie that you like
+Since it is self organized it would be amazing if everyone also could bring something that is missing, like a salad or drinks. Look in the doodle. (https://thdoodle.th-deg.de/EE4MYsGQSsZHbhCK)
+To reduce the waste, also bring a plate and silverware and a cup.
+We are happy to meet you.
+Please specify in the Comments what you are planning to bring.
+Your Fachschaft AI
+                `
+        },
+        "location": {
+            "name": "BBQ station near the Donau",
+            "maps": "https://maps.app.goo.gl/wWU948mQqP2HCDGE7"
+        },
+        "organizer":
+        {
+            "name": "Fachschaft AI",
+            "image": "thd.png",
+            "website": "https://thdoodle.th-deg.de/EE4MYsGQSsZHbhCK",
         }
     },
     
