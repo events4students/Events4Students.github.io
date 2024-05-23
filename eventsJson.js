@@ -1696,6 +1696,32 @@ Tuesday 21.05 at 7:30 pm in Room I001
 
     },
     
+    {
+        "name": 'Tech House meets Rumba Latina',
+        "date": "24.05.2024",
+        "timeStart": "20:00",
+        "timeEnd": "02:00",
+        "price": "free",
+        "category": "bar",
+        "language": "de+en",
+        "type": "inPerson",
+        "imagePaths": ["techhouse.jpeg"],
+        "descriptionLong": {
+            "en": `
+            Don't forget this Friday 24.05 we are back with a new Party in C2 Bar with all the new hits and Specials 🥳🥳 see you all tomorrow!! 🔥
+                `
+        },
+        "location": {
+            "name": "C2 Bar (City Center)",
+            "maps": "https://maps.app.goo.gl/Pida98AeHom7bRvR7"
+        },
+        "organizer":
+        {
+            "name": "C2 Bar",
+            "image": "c2.jpg",
+            "website": "https://www.facebook.com/p/C%C2%B2-Bar-Coffee-Cocktails-100054349608659/",
+        }
+    },
     
 ];
 
