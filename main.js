@@ -272,15 +272,25 @@ function getImages(eventID){
 
     let imagePaths = [];
 
-    if (!event.images){
-        // console.log(event.imagePaths)
-        imagePaths = event.imagePaths.map(image => `images/path/${image}`);
-    } else if (event.images.length == 0){
-        imagePaths.push("images/icons/quest.jpg");
-    }else{
-        // console.log("images:", event.images)
-        imagePaths = event.images.map(image => `images/${eventID}/${image}`);
+    if(event.images){
+
+        if (event.images.length > 0) {
+            imagePaths = event.images.map(image => `images/${eventID}/${image}`);
+        }else{
+            imagePaths.push("images/icons/quest.jpg");
+        }
+
+       
+    }else if(event.imagePaths){
+        if (event.folder) {
+            console.log("event.folder:", `images/${event.folder}/`)
+            imagePaths = event.imagePaths.map(image => `images/${event.folder}/${image}`);
+        } else {
+            imagePaths = event.imagePaths.map(image => `images/path/${image}`);
+        }
     }
+    
+    console.log("imagePaths:",imagePaths)
     
 
 

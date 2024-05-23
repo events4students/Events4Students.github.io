@@ -1038,7 +1038,7 @@ P.S Dont forget to bring your own food😉😋
         "registration": "no",
         "type": "inPerson",
         "language": "de+en",
-        "images": ["30THD.png"],
+        "images": ["30THD.jpeg"],
 
         "descriptionLong": {
             "de": `
@@ -1052,7 +1052,7 @@ P.S Dont forget to bring your own food😉😋
         "organizer":
         {
             "name": "THD",
-            "image": "thd.jpg",
+            "image": "thd.png",
             "email": "konvent-vorsitz@th-deg.de",
             "website": "https://www.th-deg.de/de/veranstaltung?id=15154211"
         }
@@ -1720,6 +1720,70 @@ Tuesday 21.05 at 7:30 pm in Room I001
             "name": "C2 Bar",
             "image": "c2.jpg",
             "website": "https://www.facebook.com/p/C%C2%B2-Bar-Coffee-Cocktails-100054349608659/",
+        }
+    },
+
+    {
+        "folder": "beachPartyElypso",
+        "name": 'Beach Party Elypso',
+        "date": "22.06.2024",
+        "timeStart": "20:00",
+        "timeEnd": "04:00",
+        "price": "6€",
+        "category": "bar",
+        "language": "de+en",
+        "type": "inPerson",
+        "imagePaths": ["beachparty.jpg", "soldOutEarlyBird.jpg","music.jpg",],
+        "descriptionLong": {
+            "de": `
+
+/////////////
+
+[Posted by https://www.instagram.com/elypso_deggendorf/ at 17.05.2024]
+
+Bereit für den Sommer deiner Träume? Dann verpass nicht die legendäre Beach Party im @elypso_deggendorf ! 🏖️✨
+
+📅 Datum: 22. Juni
+🕗 Zeit: 20:00 - 04:00 Uhr
+📍 Ort: elypso
+
+🚨 Early Bird Tickets sind ausverkauft! Aber keine Sorge, reguläre Tickets 12 Euro und Ü16 6 Euro sind noch im elypso, @vis_a_vis_deggendorf_ und @liesl.club verfügbar. Schnapp sie dir. Abendkasse auch möglich, 15 Euro.
+
+Was erwartet euch?
+- Ein spektakuläres DJ Line-up 🎶
+- Entspannte Shisha-Sessions 💨 @khalifa_deggendorf
+- Einzigartige Showeinlagen mit unserem Mirror Man 🕺💫
+
+Feiert mit uns bis in die frühen Morgenstunden! 🔥 #BeachPartyElypso #Sommer2024 #PartyAllNight
+
+
+
+
+
+////////////
+            📅 Datum: 22. Juni
+🕗 Zeit: 20:00 - 04:00 Uhr
+📍 Ort: elypso
+
+Freut euch auf eine Nacht voller:
+- Exklusiver Shisha-Genüsse, präsentiert von Khalifa Shisha Bar 💨🔥
+- Atemberaubendem Entertainment mit unserem Mirror Man @blackwhitedancers 🕺✨
+- Unvergesslicher Musik von unserem grandiosen DJ Line-up 🎶 @iam.maabee @djzizero @dj.mongi_ @djfrazy
+
+🎟️ Reguläre Tickets sind jetzt erhältlich! Besucht das @elypso_deggendorf , @vis_a_vis_deggendorf_ oder @liesl.club , um eure zu sichern.
+
+Kommen und erlebt eine unvergleichliche Party-Nacht🌟 #Beachpartyelypso #KhalifaShishaBar #Sommer2024 #NightsToRemember
+                `
+        },
+        "location": {
+            "name": "Elypso (20 min with the bike from deggendorf, There is also a bus connection)",
+            "maps": "https://maps.app.goo.gl/AqKWkSVaeHhogAvaA"
+        },
+        "organizer":
+        {
+            "name": "Elypso",
+            "image": "beachpartyElypso.jpg",
+            "website": "https://www.instagram.com/p/C7Rncfgo2do/",
         }
     },
     
