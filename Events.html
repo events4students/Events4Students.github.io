@@ -29,12 +29,9 @@
 
 <script>
 
-      if (navigator.serviceWorker) {
-        navigator.serviceWorker.register (
-          'https://events4students.github.io/sw.js',
-          {scope: 'https://events4students.github.io/'}
-        )
-      }
+ 
+
+
     
 //     // Array of font names
 // const fonts = ["Arial", "Times New Roman", "Verdana", "Courier New", "Georgia"];
@@ -253,19 +250,6 @@
         font-size: 30px;
     }
 
-    #addEventBtn {
-        display: none;
-        background-color: rgb(138, 43, 226, 1);
-        color: rgba(255, 255, 255, 1);
-        padding: 10px;
-        /* margin-left: 550px; */
-        font-size: 20px;
-        /* position: absolute; */
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
 
 
     .bottom-right {
@@ -333,14 +317,6 @@
 
     
     }
-        footer{
-        display: none;
-        background-color: rgb(20, 20, 20);
-        color: white;
-        text-align: center;
-        padding: 20px;
-    }
-
     
 
     header{
@@ -564,33 +540,177 @@
 
 
             <div id="events"></div>
-
-
-            <div style="display: flex; justify-content: center;">
-                <div id="whatsappFeedback" >
-                    <img id="thumbnail" src="images/icons/whatsapp.png">
-                    <!-- <div style="color: white; font-weight: bold; font-size: 20px; " >Feedback</div> -->
-                </div>
-            </div>
- 
-
-
-            <button id="addEventBtn">+Add event </button>
         </div>
     </div>
 
+
+    <div class="whatsappFeedbackContainer">
+        <div id="whatsappFeedback">
+            <span>Join Whatsapp Group</span>
+            <img id="thumbnail" src="images/icons/whatsapp.png">
+            <!-- <div style="color: white; font-weight: bold; font-size: 20px; " >Feedback</div> -->
+        </div>
+    </div>
+    
+    
+    
+    <button id="addEventBtn">+Add event </button>
+
     <footer>
-        <p>Deggendorf Events</p>
+        <button id="installApp">
+            <img src="images/icons/download.png">
+            <span>Install Events4Students App</span>
+        
+        </button>
     </footer>
+
+<style>
+.whatsappFeedbackContainer{
+ display: flex; 
+    justify-content: center;
+}
+
+#whatsappFeedback{
+   
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+#whatsappFeedback img{
+
+}
+#whatsappFeedback span{
+    font-size: 5vw;
+    font-weight: bold;
+    padding: 50px;
+    /* color: white; */
+}
+
+
+        footer{
+        /* display: none; */
+        /* background-color: rgb(20, 20, 20); */
+        color: white;
+        text-align: center;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+
+    }
+    #installApp{
+        background-color: rgb(0, 191, 255);
+        /* padding: 20px 40px; */
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        /* margin: 20px; */
+        padding: 30px;
+
+    }
+
+    #installApp img{
+        width: 50px;
+        /* margin-right: 10px; */
+        padding-right: 10px;
+        filter: invert(1);
+    }
+    #installApp span{
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+
+    
+    #addEventBtn {
+        display: none;
+        background-color: rgb(138, 43, 226, 1);
+        color: rgba(255, 255, 255, 1);
+        padding: 10px;
+        /* margin-left: 550px; */
+        font-size: 20px;
+        /* position: absolute; */
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    
+</style>
 
     <script>
 
-
-
-
-
-
 function main() {
+
+    let installPrompt = null;
+    const installButton = document.getElementById('installApp');
+    installButton.querySelector("span").innerHTML = "Install Events4Students App [Not Available]";
+
+    window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        installPrompt = event;
+        installButton.querySelector("span").innerHTML = "Install Events4Students App";
+        console.log("beforeinstallprompt fired");
+    });
+
+
+    installButton.addEventListener("click", async () => {
+
+        console.log("installButton clicked");
+        if (!installPrompt) {
+            console.log("installPrompt is null");
+            return;
+        }
+        const result = await installPrompt.prompt();
+        console.log(`Install prompt was: ${result.outcome}`);
+        disableInAppInstallPrompt();
+    });
+
+    function disableInAppInstallPrompt() {
+        installPrompt = null;
+        installButton.setAttribute("hidden", "");
+    }
+
+    // main.js
+
+    window.addEventListener("appinstalled", () => {
+        disableInAppInstallPrompt();
+    });
+
+    function disableInAppInstallPrompt() {
+        installPrompt = null;
+        installButton.setAttribute("hidden", "");
+    }
+
+
+
+    // let deferredPrompt;
+    // window.addEventListener('beforeinstallprompt', (e) => {
+    //     deferredPrompt = e;
+    // });
+
+    // const installApp = document.getElementById('installApp');
+    //     installApp.addEventListener('click', async () => {
+    //         deferredPrompt.prompt();
+    //     });
+
+    // installApp.addEventListener('click', async () => {
+    //     if (deferredPrompt !== null) {
+    //         deferredPrompt.prompt();
+    //         const { outcome } = await deferredPrompt.userChoice;
+    //         if (outcome === 'accepted') {
+    //             deferredPrompt = null;
+    //         }
+    //     }
+    // });
+
+
+
+
 
     document.getElementById("whatsappFeedback").onclick = function () {
         window.open("https://chat.whatsapp.com/Bw7nlNAwJcBBZQuLFvtRWF");

@@ -1,5 +1,18 @@
 // console.log("main.js loaded");
 
+const isLocalFile = window.location.href.startsWith("file://");
+if (isLocalFile == false) {
+
+    if (navigator.serviceWorker) {
+        navigator.serviceWorker.register(
+            'https://events4students.github.io/sw.js',
+            { scope: 'https://events4students.github.io/' }
+        )
+    }
+}
+
+
+
 
 function getLinkElement(link) {
     return "<a href='" + link + "' target='_blank'>" + link + "</a>";
