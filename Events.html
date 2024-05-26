@@ -13,6 +13,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Events Deggendorf</title>
+<link rel="manifest" href="manifest.webmanifest">
+
 <script src="https://leanderziehm.github.io/test.js" type="text/javascript" charset="utf-8"></script>
 <script src="eventsJson.js"></script>
 <script src="main.js" type="text/javascript" charset="utf-8"></script>
@@ -26,6 +28,13 @@
 
 
 <script>
+
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register (
+          'https://events4students.github.io/sw.js',
+          {scope: 'https://events4students.github.io/'}
+        )
+      }
     
 //     // Array of font names
 // const fonts = ["Arial", "Times New Roman", "Verdana", "Courier New", "Georgia"];
@@ -70,13 +79,6 @@
 
 
 
-    #header{
-        text-align: center;
-         padding: 20px;
-         margin: 0px;
-         /*background-color: rgb(0, 0, 0, 0.05);*/
-
-    }
 
      #eventsContainer {
         position: relative;
@@ -321,15 +323,7 @@
     #dateFilter{
     }
 
-    
-    #langueSelect{
-        /*display: none;*/
-        position: absolute;
-        top: 80px;
-        right: 20px;
-        z-index: 1000;
-    
-    }
+  
 
     #deBtn img, #enBtn img {
     width: 40px;
@@ -339,18 +333,197 @@
 
     
     }
+        footer{
+        display: none;
+        background-color: rgb(20, 20, 20);
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
 
+    
+
+    header{
+        /* background-color: rgb(20, 20, 20,0.1); */
+        /* color: white; */
+        text-align: center;
+        padding: 20px;
+
+        display: flex;
+        justify-content: space-between;
+        /* justify-content: center; */
+        /* align-self: start; */
+        
+    
+    }
+
+    header h2{
+        /* padding-left: 10px; */
+        /* margin-left: 5px; */
+    }
+
+
+
+    #menuBtn{
+        /* background-color: red; */
+        /* border-radius: 20px; */
+        display: flex;
+        /* center the items vertically */
+        align-items: center;
+        padding: 20px;
+
+    }
+
+    .menuStack{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    }
+
+    .menuStack span {
+    display: block;
+    height: 5px;
+    background-color: rgb(0,0,0);
+    border-radius: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+    z-index: 200;
+}
+
+.menuStack.open span{
+    background-color: white;
+
+}
+
+.menuStack.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menuStack.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menuStack.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+
+
+.interactors{
+    display: flex;
+    /* justify-content: center; */
+    /* justify-content: space-around; */
+    justify-content: space-evenly;
+    /* justify-content: space-between; */
+    margin-right: 20px;
+}
+
+  
+    .langueSelect{
+
+        /* background-color: red; */
+        /* padding-left: 10px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* padding: 20px; */
+    }
+    .langueSelect button{
+    margin: 5px;
+    }
+
+
+    #menuPanel{
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 1);
+    overflow-x: hidden;
+    padding: 0px;
+    margin: 0px;
+    transition: 0.5s;
+
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+
+    }
+
+
+
+#menuPanel a {
+    /* display: flex; */
+    padding: 20px;
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    border: 4px solid white;
+    width: 50%;
+}
+    
+    
 
         </style>
 
 
-        <div id="langueSelect">
-            <button id="deBtn"><img src="images/icons/de.png" ></button>
-            <button id="enBtn"><img src="images/icons/us.png"></button>
+        <header>
+            <h2>Events Deggendorf</h2>
+            <div id="menuBtn">
+            <div class="menuStack">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            </div>
+        
+        </header>
+
+        <div id="menuPanel">
+            
+                <a href="Jobs/Pfaffinger.html">Jobs</a>
+                <a href="Mensa/index.html">Mensa</a>
+                <a href="Calendar.html">Calendar</a>
+                <a href="UploadImage.html">Upload Image</a>`;
+       
         </div>
 
+
+        <div class="interactors" >
+                        <select id="categoryFilter">
+                            <option value="any">Any Category</option>
+                            <option value="followed">Followed</option>
+                            <!-- <option value="[Jobs]">[Jobs]</option> -->
+                            <!-- <option value="[Mensa]">[Mensa]</option> -->
+                            <!-- <option value="[Calendar]">[Calendar]</option> -->
+                            <!-- <option value="[Upload Image]">[Upload Image]</option> -->
+                        
+                        </select>
+
+                        <div class="langueSelect">
+                            <button id="deBtn"><img src="images/icons/de.png"></button>
+                            <button id="enBtn"><img src="images/icons/us.png"></button>
+                        </div>
+
+        </div>
+
+
+
         <div id="eventsContainer">
-            <h2 id="header" >Events Deggendorf</h2>
+           
 
             <div class="filtes">
             
@@ -364,20 +537,6 @@
                 <option value="nextMonth">Next Month</option>
             </select>
 
-            <select id="categoryFilter">
-                <option value="any">Any Category</option>
-                <option value="followed">Followed</option>
-                <option value="[Jobs]">[Jobs]</option>
-                <option value="[Mensa]">[Mensa]</option>
-                <option value="[Calendar]">[Calendar]</option>
-                <option value="[Upload Image]">[Upload Image]</option>
-
-        
-                <!-- <option value="sport">Sports</option>
-                <option value="cinema">Cinema</option>
-                <option value="international">International</option>
-                <option value="special">Special</option> -->
-            </select>
 
 
             <select id="typeFilter">
@@ -420,6 +579,10 @@
         </div>
     </div>
 
+    <footer>
+        <p>Deggendorf Events</p>
+    </footer>
+
     <script>
 
 
@@ -432,6 +595,31 @@ function main() {
     document.getElementById("whatsappFeedback").onclick = function () {
         window.open("https://chat.whatsapp.com/Bw7nlNAwJcBBZQuLFvtRWF");
     };
+
+
+
+
+
+    
+
+    const burgerMenu = document.querySelector('.menuStack');
+
+    burgerMenu.addEventListener('click', () => {
+        burgerMenu.classList.toggle('open');
+
+        const isMenuOpen = burgerMenu.classList.contains('open');
+        if(isMenuOpen){
+             document.getElementById("menuPanel").style.width = "100%";
+
+             //disable scrolling touch-action: none;
+             document.body.style.touchAction = "none";
+            
+
+
+        }else{
+            document.getElementById("menuPanel").style.width = "0%";
+        }
+    });
     
 
         // document.getElementById("toggleCollapseFilters").onclick = function () {
@@ -606,7 +794,7 @@ function main() {
         // console.log("eventIsInFuture:", eventIsInFuture, "date:", date, "new Date():", new Date(),"eventIsOnSameDay:", eventIsOnSameDay)
 
         if(eventIsInFuture || eventIsOnSameDay){
-             eventElementAndDateArray.push({ date: date, element: eventElement, "dateString": dateInfo["dateString"] });
+             eventElementAndDateArray.push({ date: date, element: eventElement, "dateString": dateInfo["dateString"],id: eventID});
         }
        
 
@@ -684,19 +872,19 @@ function main() {
 
             const selectedValue = filterElement.value;
 
-             if (selectedValue == '[Jobs]') {
-                window.location.href = "Jobs/Pfaffinger.html"
-                return;
-            } else if (selectedValue == '[Mensa]') {
-                window.location.href = "Mensa/index.html"
-                return;
-            }else if(selectedValue == '[Calendar]'){
-                window.location.href = "Calendar.html"
-                return;
-            } else if (selectedValue == '[Upload Image]') {
-                window.location.href = "UploadImage.html"
-                return;
-            }
+            //  if (selectedValue == '[Jobs]') {
+            //     window.location.href = "Jobs/Pfaffinger.html"
+            //     return;
+            // } else if (selectedValue == '[Mensa]') {
+            //     window.location.href = "Mensa/index.html"
+            //     return;
+            // }else if(selectedValue == '[Calendar]'){
+            //     window.location.href = "Calendar.html"
+            //     return;
+            // } else if (selectedValue == '[Upload Image]') {
+            //     window.location.href = "UploadImage.html"
+            //     return;
+            // }
 
         eventElementAndDateArray.forEach((eventElementAndDate) => {
             const passesFilter = checkIfPassesFilterCallback(eventElementAndDate,eventKeyName, filterElement.value);
@@ -793,7 +981,10 @@ function main() {
         // add dynamic categories all found in the eventsJson   
         const categories = [];
 
-        eventsJson.forEach((event) => {
+        eventElementAndDateArray.forEach((eventElementAndDate) => {
+            const eventID = eventElementAndDate.id;
+            const event = eventsJson[eventID];
+
             if (!categories.includes(event.category)) {
                 categories.push(event.category);
             }

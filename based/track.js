@@ -100,21 +100,21 @@ function main(){
 
 
 
-  const datesRef = db.ref('dates');
-  // datesRef.set([currentDateTimeString])
+  // const datesRef = db.ref('dates');
+  // // datesRef.set([currentDateTimeString])
 
-  // get dates list from db
-  datesRef.once('value', (snapshot) => {
-    const dates = snapshot.val();
-    // console.log('dates:', dates);
+  // // get dates list from db
+  // datesRef.once('value', (snapshot) => {
+  //   const dates = snapshot.val();
+  //   // console.log('dates:', dates);
 
-    const dateDay = currentDateTimeString.split(' ')[0];
-    // console.log("dateDay:", dateDay);
-    // add current date if not exists
-    if (!dates.includes(dateDay)){
+  //   const dateDay = currentDateTimeString.split(' ')[0];
+  //   // console.log("dateDay:", dateDay);
+  //   // add current date if not exists
+  //   if (!dates.includes(dateDay)){
      
-    }
-  });
+  //   }
+  // });
 
 
   //add if not exists already

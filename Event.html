@@ -11,6 +11,7 @@
 <meta property="og:description" content="Events for Students at the THD. Sports, cinema and more.">
 <meta property="og:image" content="https://events4students.github.io/images/icons/OG1.jpg" />
 
+<link rel="manifest" href="manifest.webmanifest">
 
 <script src="https://leanderziehm.github.io/test.js" type="text/javascript" charset="utf-8"></script>
 <script src="eventsJson.js"></script>
@@ -21,6 +22,15 @@
     <script src="based/base.js"></script>
     <script src="based/track.js"></script>
 
+
+<script>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register (
+          'https://events4students.github.io/sw.js',
+          {scope: 'https://events4students.github.io/'}
+        )
+      }
+</script>
 
 <style>
 
@@ -492,6 +502,8 @@
                 //     descriptionLong = descriptionLong.replace(/\n/g, "<br>");
                 // }
 
+
+                descriptionLong = formatStringBold(descriptionLong);
                 descriptionLong = formatStringMakeLinks(descriptionLong);
                 descriptionLong = formatStringRemoveStartNewLine(descriptionLong);
                 descriptionLong = formatStringHTMLShowNewLine(descriptionLong);
@@ -504,6 +516,9 @@
                 }
                 function formatStringMakeLinks(text){
                     return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+                }
+                function formatStringBold(text){
+                    return text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
                 }
 
 

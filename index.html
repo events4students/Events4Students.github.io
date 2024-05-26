@@ -11,6 +11,11 @@
 <meta property="og:description" content="Events for Students at the THD. Sports, cinema and more.">
 <meta property="og:image" content="https://events4students.github.io/images/icons/OG1.jpg" />
 
+<link rel="canonical" href="https://events4students.github.io/" />
+<link rel="manifest" href="manifest.webmanifest">
+
+
+
 <script src="https://leanderziehm.github.io/test.js" type="text/javascript" charset="utf-8"></script>
 
     <script src="based/app.js"></script>
@@ -24,6 +29,14 @@
 <body>
 
     <script>
+
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register (
+          'https://events4students.github.io/sw.js',
+          {scope: 'https://events4students.github.io/'}
+        )
+      }
+
         window.location.href = "Events.html"
     </script>
 </body>

@@ -1,0 +1,17 @@
+{
+  "name": "Events4Students",
+  "short_name": "Events",
+  "description": "Events for Students at the THD. Sports, cinema and more.",
+  "scope": "/",
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "standalone", 
+  "icons": [
+      {
+        "src": "/images/icons/icon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+  ]
+}

@@ -283,14 +283,14 @@ function getImages(eventID){
        
     }else if(event.imagePaths){
         if (event.folder) {
-            console.log("event.folder:", `images/${event.folder}/`)
+            // console.log("event.folder:", `images/${event.folder}/`)
             imagePaths = event.imagePaths.map(image => `images/${event.folder}/${image}`);
         } else {
             imagePaths = event.imagePaths.map(image => `images/path/${image}`);
         }
     }
     
-    console.log("imagePaths:",imagePaths)
+    // console.log("imagePaths:",imagePaths)
     
 
 

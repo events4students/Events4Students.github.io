@@ -1014,8 +1014,7 @@ P.S Dont forget to bring your own food😉😋
         `},
         "location": {
             "name": "Studierendenviertel",
-            "maps": "https://maps.app.goo.gl/mGwNN3vor2DweJKF8",
-            "description": ""
+            "maps": "https://maps.app.goo.gl/mGwNN3vor2DweJKF8"
         },
         "organizer":
         {
@@ -1789,7 +1788,7 @@ Tuesday 21.05 at 7:30 pm in Room I001
         "timeStart": "20:00",
         "timeEnd": "04:00",
         "price": "6€",
-        "category": "bar",
+        "category": "special",
         "language": "de+en",
         "type": "inPerson",
         "imagePaths": ["beachparty.jpg", "soldOutEarlyBird.jpg","music.jpg",],
@@ -1879,6 +1878,101 @@ Your Fachschaft AI
             "website": "https://thdoodle.th-deg.de/EE4MYsGQSsZHbhCK",
         }
     },
+
+
+    {
+        "name": "Pub Crawl",
+        "date": "01.06.2024",
+        "timeStart": "19:00",
+        "price": "free",
+        "category": "international",
+        "registration": "no",
+        "type": "inPerson",
+        "language": "en",
+        "imagePaths": ["pubcrawl.jpg"],
+
+        "descriptionLong": {
+            "en": `
+
+🎉🍻 Get Ready for the Ultimate Pub Crawl in Deggendorf! 🍻🎉
+
+Join us on June 1st at 7 PM for a night to remember in the heart of Lower Bavaria! Deggendorf's vibrant bar and club scene offers something for everyone, from traditional Bavarian beer to exquisite cocktails 🍸. Whether you're a local or just visiting, this is the perfect opportunity to explore the diverse nightlife this beautiful city has to offer.
+
+    We'll kick off the evening with a pub crawl, hitting some of Deggendorf's best bars.Enjoy a variety of drinks, meet new friends, and soak up the lively atmosphere.But the fun doesn't stop there! After the crawl, we'll head to a top club for an epic aftershow party.
+
+Expect amazing special offers and drink deals to keep the party going all night!
+
+📅 Date: June 1st
+🕖 Time: 7 PM
+📍 Location: Deggendorf Students Quarter
+💸 Participation fee: 0 Euro, but you need to pay for your drinks and the entry at Sam’s by yourself
+
+Sign up via the link in the Bio
+
+Bring your friends and your best party spirit, and let's make this a night to remember! See you there! 🍹🎶
+
+#DeggendorfNights #PubCrawl #AftershowParty #BavarianFun #CocktailsAndBeer
+        `},
+        "location": {
+            "name": "Studierendenviertel",
+            "maps": "https://maps.app.goo.gl/mGwNN3vor2DweJKF8"
+        },
+
+
+        "organizer":
+        {
+            "name": "ESN Deggendorf",
+            "image": "esn.jpg",
+            "email": "",
+            "website": "https://www.instagram.com/esn_deggendorf/"
+        }
+
+    },
+
+    {
+        "name": 'Tech House meets Rumba Latina',
+        "date": "07.06.2024",
+        "timeStart": "23:00",
+        "price": "free",
+        "category": "bar",
+        "language": "de+en",
+        "type": "inPerson",
+        "imagePaths": ["techhousechaochao.jpeg"],
+        "descriptionLong": {
+            "de": `
+            Sei dabei am **07.06.24** und erlebe eine spektakuläre Fusion aus Tech House und Rumba Latina. Tauche ein in die Beats mit unseren großartigen DJs:
+
+🎧 **DJ Mongi** @dj.mongi_
+🎧 **DJ Rizzio**
+
+🎉 Einlass ab 23 Uhr
+
+Verpasse nicht das ultimative Freitagsparty-Erlebnis! Markiere deine Freunde und macht es zu einer unvergesslichen Nacht.
+
+#ClubChaoChao #Deggendorf #TechHouse #RumbaLatina #PartyTime #SupernovaEvents #DJMongi #DJRizzio
+                `, 'en':`Join us on **07.06.24** and experience a spectacular fusion of Tech House and Rumba Latina. Dive into the beats with our amazing DJs:
+
+🎧 **DJ Mongi** @dj.mongi_
+🎧 **DJ Rizzio**
+
+🎉 Doors open from 11 pm
+
+Don't miss out on the ultimate Friday party experience! Tag your friends and make it a night to remember.
+
+#ClubChaoChao #Deggendorf #TechHouse #RumbaLatina #PartyTime #SupernovaEvents #DJMongi #DJRizzio`
+        },
+        "location": {
+            "name": "Chao Chao (City Center)",
+            "maps": "https://maps.app.goo.gl/ASihCFnxiwHgorRs8"
+        },
+        "organizer":
+        {
+            "name": "Chao Chao",
+            "image": "chaochao.jpg",
+            "website": "https://www.instagram.com/chao.chao.deggendorf/",
+        }
+    },
     
 ];
+
 
