@@ -11,7 +11,7 @@ function main(){
 
   const currentDateTimeString = getCurrentDateTimeString();
 
-  const db = firebase.database();
+
   if(shouldTrack && !isLocalFile){
    
     console.log('+');
@@ -121,12 +121,95 @@ function main(){
   // dateRef.set(currentDateTimeString);
 
 
+loadDatabase();
+
 
 }
 
 
 
 
+function loadDatabase() {
+  console.log('Load usersValues');
+
+    const usersDatabase = db.ref('users');
+    usersDatabase.once('value', (snapshot) => {
+    let usersValues = snapshot.val()||{};
+
+    const userCount = Object.keys(usersValues).length;
+    let userID = getuserID();
+    // console.log('User ID:', userID);  
+    if (!userID){
+      userID = `(${userCount})${getCurrentDateTimeString()}`;
+      // userID = "hi"
+      // console.log('User ID:', userID);
+      userID = userID.replace(/[/]/g, '-');    //replace / with with -
+      userID = userID.replace(/ /g, '');    //remove all spaces
+      setuserID(userID);
+      // console.log('User ID:', userID);
+    }
+
+    console.log('User ID:', userID);
+
+    user = usersValues[userID]
+
+    if (!user) {
+      console.log('User does not exist, creating new user');
+      localStorage.setItem('userID', userID);
+      user = {
+        userAgent: navigator.userAgent,
+        joinedTime: getCurrentDateTimeString(),
+        joinedUrl: window.location.href
+      };
+      usersValues[userID] = user;
+    }
+
+      views = user.views;
+      if (!views) {
+          views = {};
+          user.views = views;
+        }
+
+
+        let dateTimeKey = getCurrentDateTimeString();
+        dateTimeKey = dateTimeKey.replace(/[/]/g, '-');    //replace / with with -
+        dateTimeKey = dateTimeKey.replace(/ /g, ''); 
+
+        views[dateTimeKey] = window.location.href;
+         
+
+
+
+     
+      usersDatabase.set(usersValues);
+
+  });
+
+}
+
+function getuserID() {
+    const userID = localStorage.getItem('userID');
+    console.log('Get userID:', userID);
+    return userID;
+}
+function setuserID(userID) {
+    console.log('Set userID:', userID);
+    localStorage.setItem('userID', userID);
+}
+
+
+function dateToString(date) {
+    let options = {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+    };
+    return date.toLocaleString('en-GB', options);
+  }
 
 
 function getCurrentDateTimeString() {
@@ -211,7 +294,7 @@ const firebaseConfig = {
     appId: "1:399835574809:web:a963ee301a890bf05a7088"
 };
 firebase.initializeApp(firebaseConfig);
-
+const db = firebase.database();
 
 
 

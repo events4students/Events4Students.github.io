@@ -501,7 +501,7 @@
         <div id="eventsContainer">
            
 
-            <div class="filtes">
+           <!--  <div class="filtes">
             
             <select id="dateFilter">
                 <option value="any">Any Day</option>
@@ -534,7 +534,7 @@
             </select>
 
 
-            </div>
+            </div> -->
 
            
 
@@ -667,24 +667,15 @@ function main() {
         }
         const result = await installPrompt.prompt();
         console.log(`Install prompt was: ${result.outcome}`);
-        disableInAppInstallPrompt();
-    });
-
-    function disableInAppInstallPrompt() {
         installPrompt = null;
-        installButton.setAttribute("hidden", "");
-    }
-
-    // main.js
+    });
 
     window.addEventListener("appinstalled", () => {
-        disableInAppInstallPrompt();
+        installPrompt = null;
+        installButton.querySelector("span").innerHTML = "[App already installed]";
+
     });
 
-    function disableInAppInstallPrompt() {
-        installPrompt = null;
-        installButton.setAttribute("hidden", "");
-    }
 
 
 
@@ -1130,10 +1121,10 @@ function main() {
 
     // hide every commented filter 
 
-    document.getElementById("dateFilter").style.display = "none";
-    document.getElementById("typeFilter").style.display = "none";
-    document.getElementById("priceFilter").style.display = "none";
-    document.getElementById("languageFilter").style.display = "none";
+    // document.getElementById("dateFilter").style.display = "none";
+    // document.getElementById("typeFilter").style.display = "none";
+    // document.getElementById("priceFilter").style.display = "none";
+    // document.getElementById("languageFilter").style.display = "none";
 
 
     
