@@ -1,97 +1,100 @@
 
 function main(){
 
-  const shouldTrackText = get('shouldTrack', "true");
-  let shouldTrack = (shouldTrackText === "true");
+  // const shouldTrackText = get('shouldTrack', "true");
+  // let shouldTrack = (shouldTrackText === "true");
 
-  const url = window.location.href;
+  // const url = window.location.href;
 
-  const isLocalFile = url.startsWith('file://');
-
-
-  const currentDateTimeString = getCurrentDateTimeString();
+  // const isLocalFile = url.startsWith('file://');
 
 
-  if(shouldTrack && !isLocalFile){
+  // const currentDateTimeString = getCurrentDateTimeString();
+
+
+  // // if(shouldTrack && !isLocalFile){
    
-    console.log('+');
-    const ref = db.ref('views');
-    const visitRef = ref.push();
-    visitRef.set({
-      url: url,
-      dateTime: currentDateTimeString,
-    });
-  }else{
-    console.log('.');
-  }
+  // //   console.log('+');
+  // //   const ref = db.ref('views');
+  // //   const visitRef = ref.push();
+  // //   visitRef.set({
+  // //     url: url,
+  // //     dateTime: currentDateTimeString,
+  // //   });
+  // // }else{
+  // //   console.log('.');
+  // // }
 
-  const browser = navigator.userAgent;
+  // const browser = navigator.userAgent;
 
 
 
-  const lastVisit = localStorage.getItem('lastVisit');
+  // const lastVisit = localStorage.getItem('lastVisit');
 
-  const uniqueUsersRef = db.ref('uniqueUsers');
-  const uniqueUserRef = uniqueUsersRef.push();
-  const uniqueUsersEachDayRef = db.ref('uniqueUsersEachDay');
-  const uniqueUsersEachDay = uniqueUsersEachDayRef.push(lastVisit);
+  // const uniqueUsersRef = db.ref('uniqueUsers');
+  // const uniqueUserRef = uniqueUsersRef.push();
+  // const uniqueUsersEachDayRef = db.ref('uniqueUsersEachDay');
+  // const uniqueUsersEachDay = uniqueUsersEachDayRef.push(lastVisit);
  
 
-  const isNewUser = (lastVisit == null);
+  // const isNewUser = (lastVisit == null);
 
 
 
-  if (isNewUser) {
-    // console.log('First visit:', currentDateTimeString);
-    uniqueUserRef.set({
-      url:url,
-      dateTime: currentDateTimeString,
-      browser: browser,
-    });
-  }else{
-    const todayDate = currentDateTimeString.split(' ')[0];
-    const lastVisitDate = lastVisit.split(' ')[0];
-    const firstVisitToday = (todayDate !== lastVisitDate);
+  // if (isNewUser) {
+  //   // console.log('First visit:', currentDateTimeString);
+  //   uniqueUserRef.set({
+  //     url:url,
+  //     dateTime: currentDateTimeString,
+  //     browser: browser,
+  //   });
+  // }else{
+  //   const todayDate = currentDateTimeString.split(' ')[0];
+  //   const lastVisitDate = lastVisit.split(' ')[0];
+  //   const firstVisitToday = (todayDate !== lastVisitDate);
 
 
-    if (firstVisitToday){
-      // console.log('First Visited today:', currentDateTimeString);
-      uniqueUserRef.set({
-        url: url,
-        dateTime: currentDateTimeString,
-        browser: browser,
-      });
+  //   if (firstVisitToday){
+  //     // console.log('First Visited today:', currentDateTimeString);
+  //     uniqueUserRef.set({
+  //       url: url,
+  //       dateTime: currentDateTimeString,
+  //       browser: browser,
+  //     });
 
-    }else{
-      // console.log('Already visited today:', currentDateTimeString);
-    }
-  }
-
-
-  if (lastVisit) {
-    console.log('Last visit was at:', currentDateTimeString);
-    // uniqueUsersEachDay.set
-    uniqueUsersEachDay.set({
-      url:url,
-      dateTime: lastVisit,
-      browser: browser,
-    });
-
-  } 
+  //   }else{
+  //     // console.log('Already visited today:', currentDateTimeString);
+  //   }
+  // }
 
 
+  // if (lastVisit) {
+  //   console.log('Last visit was at:', currentDateTimeString);
+  //   // uniqueUsersEachDay.set
+  //   uniqueUsersEachDay.set({
+  //     url:url,
+  //     dateTime: lastVisit,
+  //     browser: browser,
+  //   });
 
-
-
-  localStorage.setItem('lastVisit', currentDateTimeString);
+  // } 
 
 
 
 
 
+  // localStorage.setItem('lastVisit', currentDateTimeString);
 
 
 
+
+
+
+
+
+  const url = window.location.href;
+  const currentDateTimeString = getCurrentDateTimeString();
+  const browser = navigator.userAgent;
 
   const liveRightNowRef = db.ref('liveRightNow');
   const liveRightNow = liveRightNowRef.push();
