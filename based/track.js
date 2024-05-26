@@ -198,7 +198,7 @@ function setuserID(userID) {
 }
 
 
-function dateToString(date) {
+function myDateToString(date) {
     let options = {
       day: '2-digit',
       month: '2-digit',
