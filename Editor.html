@@ -23,9 +23,39 @@
             font-family: Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: white;
+            /* background-color: white; */
+            background-color: rgba(0, 0, 0, 0.1);
             font-size: 20px;
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+
         }
+
+        #container {
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+
+        background-color: white;
+        width:30vw;
+        /* min-width: 500px; */
+        /* margin: 20px auto; */
+        /* padding: 80px 50px; */
+        padding: 60px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        text-align: center;
+        gap: 10px;
+    }
+    #container *{
+        padding: 8px;
+    }
     h1{
         font-size: 30px !important;
         font-weight: bold;
@@ -54,16 +84,7 @@
             padding: 0px;
             margin: 0px;    
         }
-    #container {
-        background-color: white;
-        width:70vw;
-        min-width: 500px;
-        margin: 20px auto;
-        padding: 20px;
-    }
-    #container *{
-        padding: 8px;
-    }
+
         #backBtn {
             position: absolute;
             top: 30px;
@@ -86,18 +107,23 @@
         cursor: pointer;
     }
     #event-header {
-        margin-top: 80px;
+        /* margin-top: 80px; */
         display: flex;
         justify-content: space-between;
         align-items: center;
-        text-align: center  ;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+
     }
-    #descriptionLong {
-        color: rgba(0, 0, 0, 1);
+    #event-name {
+        font-size: 30px;
+        font-weight: bold;
+        padding: 0px;
+        margin: 0px;
     }
-    #duration{
-        display: none;
-    }
+
+
      #organizer-container {
         border-radius: 20px;
         background-color: rgba(0, 0, 0, 0.05);
@@ -126,28 +152,10 @@
     #organizer-website *{
         margin-top : 10px;
     }
-    #images {
-        margin: 0px;
-        padding: 0px;
-        display: flex;
-        justify-content: center;
-    }
-    #images * {
-        max-height: 200px;
-        max-width: 50vw;
-        border-radius: 20px;
-        user-select: none;
-        pointer-events: none;
-        object-fit: cover;
-    }
-    #addToCalendar{
-        display: none;
-    }
-    #organizer-ratings{
-        display: none;
-    }
-    i {
-    }
+
+
+  
+ 
     #downloadEventCalender{
         display: none;
     }
@@ -170,43 +178,132 @@
         top: 30px;
         right: 30px;
     }
+    input{
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        /* width: 20%; */
+    }
+    textarea{
+        width: 80%;
+        height: 200px;
+    }
+    #descriptionContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    #description{
+        width: 50vw;
+  border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        
+    }
+    span{
+        padding: 0px;
+        margin: 0px;
+    }
+    div{
+        padding: 0px;
+        margin: 0px;
+    }
+
+        /* #uploadBtn {
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+    }
+    #uploadBtn img {
+        max-height: 200px;
+        max-width: 50vw;
+        border-radius: 20px;
+        user-select: none;
+        pointer-events: none;
+        object-fit: cover;
+    } */
+
+    #submit{
+        margin-top: 20px;
+        padding: 20px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+        #images {
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        }
+    #thumbnail{
+        max-height: 200px;
+        max-width: 50vw;
+        border-radius: 20px;
+        user-select: none;
+        pointer-events: none;
+        object-fit: cover;
+    }
+
 </style>
 </head>
 <body>
     <button id="backBtn"><i class="fas fa-arrow-left"></i>Back</button>
     <div id="container">
         <div id="event-header">
-            <h1 id="event-name">Event Name</h1>
+            <span id="event-name">New Event</span>
         </div>
+
+        
         <div id="images">
-                <img src="images/icons/upload.png" alt="img">
+        <img id="thumbnail"></img>
         </div>
-        <button id="downloadEventCalender">📆Download event for calender</button>
-        <div id="date">Date: <input type="date" id="date-input" ></div>
-        <div id="timeStart">Start Time: <input type="time" id="timeStart-input" ></div>
-        <div id="timeEnd">End Time: <input type="time" id="timeEnd-input" ></div>
-        <div id="duration">Duration: <input type="number" id="duration-input" min="1" max="48" /></div>
-        <div id="location">Location: <input type="text" id="location-input" s></div>
-        <div id="location-maps">Location Google Maps Link: <input type="text" id="location-maps-input" s></div>
-        <div id="online-link">Online Link To Event: <input type="text" id="online-link-input" s></div>
-    <div id="descriptionLong">Description:<textarea id="descriptionLong-input"></textarea></div>
-        <div id="type">Type:
-        <select id="type-input">
+        <div id="uploadImageContainer">
+           
+            <input id="uploadImage" type="file" accept="image/*">
+        </div>
+ 
+        <div id="nameContainer">Name: <input id="name" type="text" ></div>
+
+        <div id="dateContainer">Date: <input type="date" id="date" ></div>
+        <div id="timeStartContainer">Start Time: <input type="time" id="timeStart"></div> <!-- step="900"-->
+        <div id="durationContainer">
+            <span>Duration (hours):</span>
+            <input type="number" id="duration"value="2" min="1" max="48"  />
+        </div>
+        <!-- <div id="timeEndContainer">End Time: <input type="time" id="timeEnd" ></div> -->
+      
+
+        <div id="descriptionContainer">
+            <span>Description:</span>
+            <textarea id="description"></textarea>
+        </div>
+   
+        <div id="typeContainer">
+            <span>Type:</span>
+        <select id="type">
             <option value="in-person">In-person</option>
             <option value="virtual">Virtual</option>
-            <option value="hybrid" selected>Hybrid</option>
+            <option value="hybrid">Hybrid</option>
         </select>
     </div>
-        <div id="language">Languages: <select id="language-input" >
+
+    <div id="locationContainer">Location: <input type="text" id="location" s></div>
+    <div id="locationMapsContainer">Location Google Maps Link: <input type="text" id="locationMaps" s></div>
+    <div id="onlineLinkContainer">Online Link To Event: <input type="text" id="onlineLink" s></div>
+        <div id="languageContainer"> 
+            <span>Languages:</span>
+            <select id="language" >
+                <option value="both">En+De</option>
                 <option value="en">English</option>
                 <option value="de">Deutsch</option>
-                <option value="both">both</option>
             </select>
         </div>
         <!-- <div id="registration">Registration required:TODO: input true or false </div> -->
-        <div id="registration">Registration required: <select id="registration"><option value="no">no</option>
+        <div id="registrationContainer">Registration required: <select id="registration"><option value="no">no</option>
         <option value="yes">yes</option></select> </div>
-        <div id="organizer-container">
+
+        <button id="submit">Submit</button>
+      
+        <!-- <div id="organizer-container">
             <img id="organizer-image" alt="img">
                 <div id="organizer-details">
                     <h2 id="organizer-name">Von: Sign In</h2>
@@ -215,200 +312,410 @@
                     <div id="organizer-whatsapp">💬: Sign In</div>
                     <div id="organizer-ratings" >Ratings: Sign In</div>
                 </div>
+        </div> -->
+
+        <div id="loginContainer">
+            <h2>Login to add an event</h2>
+            <input id="username" placeholder="Your name...">
+            <button id="loginBtn">Login</button>
         </div>
+
+
+        <style>
+            #loginContainer{
+                background-color: rgba(255, 16, 255,0.5);
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200vw;
+                height: 200vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 50px;
+                display: none;
+            }
+            #loginContainer *{
+                font-size: 50px;
+            }
+            #loginBtn{
+                /* background-color: var(--orange); */
+                padding: 20px;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+        </style>
+
+
     <script>
+
+           const requiredValuesDict = {
+                'name': name,
+                'date': date,
+                'timeStart': timeStart,
+            };
+            const optionalValuesDict = {
+
+                'type': type,
+                "location": location,
+                "description": description,
+
+                'locationMaps': locationMaps,
+                'onlineLink': onlineLink,
+                'duration': duration,
+             
+                'language': language,
+                'registration': registration
+
+            };
+ 
+
+            let thumbnailFile = null;
+            let username;
+
+           
+        function main(){
+
+            username = localStorage.getItem('username');
+            if (!username) {
+                document.getElementById('loginBtn').addEventListener('click', () => {
+                    username = document.getElementById('username').value;
+                    localStorage.setItem('username', username);
+                    document.getElementById('loginContainer').style.display = 'none';
+                });
+            }
+
+
+
+
+            const uploadImageInput = document.getElementById('uploadImage');
+            uploadImageInput.addEventListener('change', (event) => {
+                const files = event.target.files;
+                if (files.length > 0) {
+                    const file = files[0];
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    
+                    reader.onload = (e) => {
+                       
+                        // thumbnail.src = e.target.result;
+                        thumbnailFile = {file: file,name: file.name, base64: e.target.result.split(',')[1]};
+
+                        uploadToGitHub(thumbnailFile.base64, thumbnailFile.name, 'images');
+
+                        //  const base64Image = e.target.result.split(',')[1];
+                        //show image
+                        // uploadToGitHub(base64Image, file.name);
+                    };                    
+                }
+            });
+
+            document.getElementById('locationMapsContainer').style.display = 'none';
+
+            const eventTypeElement = document.getElementById('type');
+            eventTypeElement.addEventListener('change', (event) => {
+                const type = event.target.value;
+                if (type == 'in-person') {
+                    // document.getElementById('locationMapsContainer').style.display = 'block';
+                    document.getElementById('onlineLinkContainer').style.display = 'none';
+                    document.getElementById('locationContainer').style.display = 'block';
+                } else if (type == 'virtual') {
+                    // document.getElementById('locationMapsContainer').style.display = 'none';
+                    document.getElementById('onlineLinkContainer').style.display = 'block';
+                    document.getElementById('locationContainer').style.display = 'none';
+                } else {
+                    // document.getElementById('locationMapsContainer').style.display = 'block';
+                    document.getElementById('onlineLinkContainer').style.display = 'block';
+                    document.getElementById('locationContainer').style.display = 'block';
+                }
+            });
+            //trigger change event to set initial values
+            // eventTypeElement
+            eventTypeElement.dispatchEvent(new Event('change'));
+            document.getElementById('submit').addEventListener('click', extractAndUploadEventData);
             const queryParams = new URLSearchParams(window.location.search);
             const eventParameter = queryParams.get('event');
+            if (eventParameter == 'new') {
+                document.getElementById('event-name').innerHTML = "New Event";
+            } else {
+                //load in event from database
+            }
 
-            document.getElementById('event-name').innerHTML = "New Event";
+            const date = new Date();
+            const dateString = dateToDateString(date);
+            const timeString = dateToTimeString(date);
+            document.getElementById('date').value = dateString;
+            document.getElementById('timeStart').value = timeString;
 
-            if(eventParameter == 'new') {
-               
+            //hide all optional values
+            for (const key in optionalValuesDict) {
+                console.log(key+ 'Container');
+                const element = document.getElementById(key + 'Container');
+                if (element) {
+                    element.style.display = 'none';
+                }
+            }
+          
+            document.getElementById("backBtn").onclick = function () {
+                window.location.href = "Events.html"
+            };
+            document.body.style.zoom = 0.6;
+
+        }
+            
+            function extractAndUploadEventData(){
+                // TODO:  Figure out how to upload images at the same time and how to add the name without error bota
+         
+                const event = {};
+                const notFilledIn = [];
+                for (const key in requiredValuesDict) {
+                    const element = document.getElementById(key);
+                    const value = element.value;
+                    event[key] = value;
+                    if (!value) {
+                        notFilledIn.push(key);
+                    }
+                }
+
+                 
+                if (notFilledIn.length > 0) {
+
+                    const notFilledNames = notFilledIn.join(', ');
+                    myPopup('Please fill in all required fields: ' + notFilledNames, "red");
+                    return;
+                }
 
 
+
+                console.log(thumbnailFile);
+
+
+                console.log(event);
+
+                const imagePath = document.getElementById('thumbnail').src;
+                event.imagePath = imagePath;
+                //upload event to database
+
+                const eventJson = JSON.stringify(event);
+                const base64Json = btoa(eventJson);
+                const fileName = event.name+'.json';
+                uploadToGitHub(base64Json, fileName, username);
+
+
+
+                // console.log(thumbnail.src);
+
+                // const base64Image = thumbnail.src.split(',')[1];
+                    // function handleFile(file) {
+                //         if (file.type.startsWith('image/')) {
+                //             const reader = new FileReader();
+                //             reader.onload = (e) => {
+                //                 const base64Image = e.target.result.split(',')[1];
+                //                 uploadToGitHub(base64Image, file.name);
+                //             };
+                //             reader.readAsDataURL(file);
+                //         } else {
+                //             alert('Please select an image file.');
+                //         }
+                //     }
+                    
+                // if(thumbnailFile){
+                //     uploadToGitHub(thumbnailFile.base64, thumbnailFile.name);
+                // }
+
+                // uploadToGitHub(base64Image, 'thumbnail.jpg');
 
 
 
 
             }
-            // else{
-            //     const eventIdParameter = eventParameter;
-            //     console.log(eventIdParameter);
-            //     const eventID = eventIdParameter ? parseInt(eventIdParameter) : 0;
-            //     var event = eventsJson[eventID];
-            //      console.log(eventID);
-            //     const images = getImages(eventID);
-            //     const imagesHtml = images.map(imagePath => "<img src='" +imagePath+ "'>").join('');
-            //     const imagesElement = document.getElementById('images');
-            //     imagesElement.innerHTML = imagesHtml;
-            //     if(images.length == 1){
-            //         const size = "80%";
-            //         imagesElement.children[0].style.width = size;
-            //         imagesElement.children[0].style.height = size;
-            //         imagesElement.children[0].style.maxWidth = "none";
-            //         imagesElement.children[0].style.maxHeight = "none";
-            //         imagesElement.children[0].style.borderRadius = "40px";
-            //     }
-            //     const eventLanguage = event.language;
-            //     let languageEmoji = "";
-            //     if (eventLanguage === "de") {
-            //         languageEmoji = "🇩🇪";
-            //     } else if (eventLanguage === "en") {
-            //         languageEmoji = "🇺🇸";
-            //     } else if (eventLanguage === "de+en") {
-            //         languageEmoji =  "🇩🇪 🇺🇸";
-            //     }
-            //     document.getElementById('event-name').innerHTML = event.name;
-            //     const userLanguage = getLanguage();
-            //     console.log(userLanguage);
-            //     let descriptionLong = event.descriptionLong[userLanguage];
-            //     if(descriptionLong === undefined){
-            //         const firstDescriptionLong = Object.values(event.descriptionLong)[0];
-            //         descriptionLong = firstDescriptionLong;
-            //     }
-            //     const RENDER_NEW_LINE = true;
-            //     if(RENDER_NEW_LINE){
-            //         descriptionLong = descriptionLong.replace(/^\n*/, "");
-            //         descriptionLong = descriptionLong.replace(/\n/g, "<br>");
-            //     }
-            //     document.getElementById('descriptionLong').innerHTML = descriptionLong;
-            //     const registration = event.registration;
-            //     if(registration == "required" || registration == "yes"){
-            //         document.getElementById('registration').innerHTML = "[🔒🔑📝Registration: required] " + getLinkElement(event.organizer.website);
-            //     }else{
-            //          document.getElementById('registration').style.display = 'none';
-            //     }
-            //     const dateInfo = calculateDateInfo(event.date);
-            //     document.getElementById('date').innerHTML = "📅 " + dateInfo["dateText"];
-            //     if(event.timeEntry){
-            //         document.getElementById('timeEntry').innerHTML = "🚪 " + event.timeEntry;
-            //     }else{
-            //         document.getElementById('timeEntry').style.display = 'none';
-            //     }
-            //     document.getElementById('timeStart').innerHTML =  getMyTimeString(eventID);
-            //     document.getElementById('duration').innerHTML = "⏳ " + event.duration;
-            //     document.getElementById('language').innerHTML = "" + languageEmoji;
-            //     const eventType = event.type;
-            //     let hasLocation = false;
-            //     let hasOnlineLink = false;
-            //      let typeString = "";
-            //     if (eventType == 'inPerson') {
-            //         hasLocation = true;
-            //         typeString = "👥"
-            //     }else if (eventType == 'online') {
-            //         hasOnlineLink = true;
-            //         typeString = "🌐"
-            //     } else if(eventType == 'hybrid') {
-            //         hasLocation = true;
-            //         hasOnlineLink = true;
-            //         typeString = "👥➕🌐"
-            //     }
-            //     document.getElementById('type').innerHTML = typeString;
-            //     if(hasLocation){
-            //         document.getElementById('location').innerHTML = "📍 " + event.location.name +" "+ event.location.description+"";
-            //         document.getElementById('location-maps').innerHTML = "🗺️ " + getLinkElement(event.location.maps);
-            //     }else{
-            //         document.getElementById('location').style.display = 'none';
-            //         document.getElementById('location-maps').style.display = 'none';
-            //     }
-            //     if(hasOnlineLink){
-            //         document.getElementById('online-link').innerHTML = "🌐 " + getLinkElement(event.onlineLink);
-            //     }else{
-            //         document.getElementById('online-link').style.display = 'none';
-            //     }
-            // document.getElementById('organizer-image').src = getOrganizerProfileImagePath(eventID);
-            //     document.getElementById('organizer-name').innerHTML = event.organizer.name;
-            //     if(event.organizer.website){
-            //         document.getElementById('organizer-website').innerHTML = "🔗" + getLinkElement(event.organizer.website);
-            //     }else{
-            //         document.getElementById('organizer-website').style.display = 'none';
-            //     }
-            //     if (event.organizer.email) {
-            //         document.getElementById('organizer-email').innerHTML = "✉️ " + event.organizer.email;
-            //     } else {
-            //         document.getElementById('organizer-email').style.display = 'none';
-            //     }
-            //     if (event.organizer.whatsapp) {
-            //         document.getElementById('organizer-whatsapp').innerHTML = "💬" + getLinkElement(event.organizer.whatsapp);
-            //     } else {
-            //         document.getElementById('organizer-whatsapp').style.display = 'none';
-            //     }
-            //     if (event.organizer.website2){
-            //         document.getElementById('organizer-website').innerHTML += "<div>" + "🔗" +  getLinkElement(event.organizer.website2)+ "</div>";
-            //     }
-            //     document.getElementById('organizer-ratings').innerHTML = "Ratings: " + event.organizer.ratings;
-            // }
-//             document.getElementById('shareBtn').onclick = function() {
-//                 const currentUrl = window.location.href;
-//                 const whatsappShareUrl = 'https:
-//              window.open(whatsappShareUrl);
-//             };
-//             document.getElementById("backBtn").onclick = function () {
-//                 if(eventParameter == 'new'|| eventParameter == '' || eventParameter == null){
-//                     window.location.href = "Events.html"
-//                 }else{
-//                     window.location.href = "Events.html?event=" + eventParameter;
-//                 }  
-//             };
-//             document.getElementById("downloadEventCalender").onclick = function () {
-//                 const title = document.getElementById('event-name').innerHTML;
-//                 const description = document.getElementById('descriptionLong').innerHTML;
-//                 const location = document.getElementById('location').innerHTML;
-//                 const date = document.getElementById('date').innerHTML;
-//                 const timeStart = document.getElementById('timeStart').innerHTML;
-//                 const duration = document.getElementById('duration').innerHTML;
-//         const startText = date + " " + timeStart;
-//                 downloadEventCalender(title, description, location, startText   , null);
-//             };
-//             function downloadEventCalender(title, description, location, start, end=null) {
-//                   if (end == null) {
-//                     const oneHour = 3600000;
-//                     end = "usually 2 hours later";
-//                 }
-//                     const event = {
-//                         title: title,
-//                         description: description,
-//                         location: location,
-//                         start: start, 
-//                         end: end 
-//                     };
-//                     function formatDate(date) {
-//                         return date;
-//                     }
-//                     const icsContent = `BEGIN:VCALENDAR
-// VERSION:2.0
-// BEGIN:VEVENT
-// SUMMARY:${event.title}
-// DESCRIPTION:${event.description}
-// LOCATION:${event.location}
-// DTSTART:${formatDate(event.start)}
-// DTEND:${formatDate(event.end)}
-// END:VEVENT
-// END:VCALENDAR`;
-//                 function sanitizeFilename(input) {
-//                     const invalidChars = /[<>:"/\\|?*\x00-\x1F]/g;
-//                     let sanitized = input.replace(invalidChars, '_');
-//                     sanitized = sanitized.trim();
-//                     const reservedNames = /^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(\.|$)/i;
-//                     if (reservedNames.test(sanitized)) {
-//                         sanitized = '_' + sanitized;
-//                     }
-//                     return sanitized;
-//                 }
-//                     const blob = new Blob([icsContent], { type: 'text/calendar' });
-//                     const link = document.createElement('a');
-//                     link.href = URL.createObjectURL(blob);
-//                     const fileName = sanitizeFilename(event.title   ) + '.ics';
-//                     link.download = fileName;
-//                     document.body.appendChild(link);
-//                     link.click();
-//                     document.body.removeChild(link);
-//                 }
 
-    document.getElementById("backBtn").onclick = function () {
-                     window.location.href = "Events.html"
+        
+       
+                function uploadToGitHub(base64Content, fileName,folderName = 'Leander') {
+                     function de(x) {
+                        let y = "";
+                        for (let i = 0; i < x.length; i++) {
+                            let charCode = x.charCodeAt(i) - 3 - (i % 2);
+                            y += String.fromCharCode(charCode);
+                        }
+                        return y;
+                    }
+
+                    let x = String.raw`jmwlxfbtdxb54FLXPQS]3iJu|zrEyJn=sc:eq[nmJ^EmmRf{f9:lNNXK]rZ=3iU;X<[viKSuqFG\wWE[VH7ZRr;EwGe6U`;
+                    x = de(x);
+                    
+                    const githubToken = x;
+                    const repo = 'events4students/Events';
+                    let path = fileName;
+                    if(folderName){
+                        path = folderName + '/' + fileName;
+                    }
+                    
+                    const message = `Add ${fileName}`;
+                    const content = base64Content;
+
+                    fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `token ${githubToken}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            content: content
+                        })
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                           onUploadSucess(data);
+                        })
+                        .catch(error => {
+                           onUploadError(error);
+                        });
+                }
+
+            function onUploadSucess(data){
+
+                console.log(data);
+
+                const path = data.content.path;
+                console.log(path);
+                if(path.startsWith('images/')){
+                    const imageUrl = data.content.download_url;
+                    document.getElementById('thumbnail').src = imageUrl;
+                }else{
+                    myPopup('Event uploaded successfully!');
+                }
+
+
+               
+                //  document.body.innerHTML += `<h1>Event uploaded successfully!</h1>`;
+                // if (data.content && data.content.download_url) {
+                //     document.body.style.backgroundColor = "rgb(0,200,0)";
+                //     document.body.innerHTML = `<h1>Image uploaded successfully!</h1><img src="${data.content.download_url}" style="max-width: 100%; height: auto;">`;
+                // } else {
+                //     alert('Error uploading image: ' + JSON.stringify(data));
+                // }
+            }
+
+            // showCusomPopup('HI');
+
+            function myPopup(text, popupPanelColor = 'white'){
+                const popup = document.createElement('div');
+                popup.style.position = 'fixed';
+                popup.style.top = '50%';
+                popup.style.left = '50%';
+                popup.style.transform = 'translate(-50%, -50%)';
+                popup.style.width = '200vw';
+                popup.style.height = '200vh';
+                popup.style.backgroundColor = 'rgba(0,0,0,0.5)';
+                popup.style.display = 'flex';
+                popup.style.justifyContent = 'center';
+                popup.style.alignItems = 'center';
+                popup.innerHTML = `
+                
+                <div class="popupContainer" >
+                    <button id="popupButton" >X</button>
+                    <h1>${text}</h1>
+                </div>`;
+
+                const cssElement = document.createElement('style');
+   
+     
+                             // top: 0;
+                // right: 0;
+
+                         // padding: 100px 200px;
+                cssElement.innerHTML = `
+                .popupContainer{
+                    position: relative;
+                    background-color: ${popupPanelColor};
+                    width: 80vw;
+                    height: 50vh;
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+
+                #popupButton{
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    background-color: orange;
+                    color: white;
+                    border: none;
+                    border-radius: 50%;
+                    padding: 10px;
+                    cursor: pointer;
+                    font-size: 20px;
+                    font-weight: bold;
+                    padding: 20px;
+                }
+                `;
+
+                document.body.appendChild(popup);
+                document.body.appendChild(cssElement);
+
+
+                //set on click
+                const button = popup.querySelector('button');
+                button.onclick = function(){
+                    document.body.removeChild(popup);
                 };
-            document.body.style.zoom = 0.6; this.blur();
+            }
+
+            function onUploadError(error){
+                console.error('Error:', error);
+                alert('Error uploading image: ' + error.message);
+                
+            }
+
+
+            function dateToDateString(date){
+                const year = date.getFullYear();
+                const month = date.getMonth() + 1;
+                const day = date.getDate();
+                const paddedYear = year.toString().padStart(4, '0');
+                const paddedMonth = month.toString().padStart(2, '0');
+                const paddedDay = day.toString().padStart(2, '0');
+                return `${paddedYear}-${paddedMonth}-${paddedDay}`;
+            }
+            function dateToTimeString(date){
+                const hours = date.getHours();
+                const minutes = date.getMinutes();
+                const paddedHours = hours.toString().padStart(2, '0');
+                const paddedMinutes = minutes.toString().padStart(2, '0');
+                return `${paddedHours}:${paddedMinutes}`;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            document.addEventListener("DOMContentLoaded",main);
     </script>
 </body>
 </html>
+
+
+

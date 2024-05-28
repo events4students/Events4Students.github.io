@@ -14,7 +14,6 @@ function main(){
 
   // // if(shouldTrack && !isLocalFile){
    
-  // //   console.log('+');
   // //   const ref = db.ref('views');
   // //   const visitRef = ref.push();
   // //   visitRef.set({
@@ -22,7 +21,6 @@ function main(){
   // //     dateTime: currentDateTimeString,
   // //   });
   // // }else{
-  // //   console.log('.');
   // // }
 
   // const browser = navigator.userAgent;
@@ -42,7 +40,6 @@ function main(){
 
 
   // if (isNewUser) {
-  //   // console.log('First visit:', currentDateTimeString);
   //   uniqueUserRef.set({
   //     url:url,
   //     dateTime: currentDateTimeString,
@@ -55,7 +52,6 @@ function main(){
 
 
   //   if (firstVisitToday){
-  //     // console.log('First Visited today:', currentDateTimeString);
   //     uniqueUserRef.set({
   //       url: url,
   //       dateTime: currentDateTimeString,
@@ -63,13 +59,11 @@ function main(){
   //     });
 
   //   }else{
-  //     // console.log('Already visited today:', currentDateTimeString);
   //   }
   // }
 
 
   // if (lastVisit) {
-  //   console.log('Last visit was at:', currentDateTimeString);
   //   // uniqueUsersEachDay.set
   //   uniqueUsersEachDay.set({
   //     url:url,
@@ -109,10 +103,8 @@ function main(){
   // // get dates list from db
   // datesRef.once('value', (snapshot) => {
   //   const dates = snapshot.val();
-  //   // console.log('dates:', dates);
 
   //   const dateDay = currentDateTimeString.split(' ')[0];
-  //   // console.log("dateDay:", dateDay);
   //   // add current date if not exists
   //   if (!dates.includes(dateDay)){
      
@@ -133,7 +125,6 @@ loadDatabase();
 
 
 function loadDatabase() {
-  console.log('Load usersValues');
 
     const usersDatabase = db.ref('users');
     usersDatabase.once('value', (snapshot) => {
@@ -141,23 +132,18 @@ function loadDatabase() {
 
     const userCount = Object.keys(usersValues).length;
     let userID = getuserID();
-    // console.log('User ID:', userID);  
     if (!userID){
       userID = `(${userCount})${getCurrentDateTimeString()}`;
       // userID = "hi"
-      // console.log('User ID:', userID);
       userID = userID.replace(/[/]/g, '-');    //replace / with with -
       userID = userID.replace(/ /g, '');    //remove all spaces
       setuserID(userID);
-      // console.log('User ID:', userID);
     }
 
-    console.log('User ID:', userID);
 
     user = usersValues[userID]
 
     if (!user) {
-      console.log('User does not exist, creating new user');
       localStorage.setItem('userID', userID);
       user = {
         userAgent: navigator.userAgent,
@@ -192,11 +178,9 @@ function loadDatabase() {
 
 function getuserID() {
     const userID = localStorage.getItem('userID');
-    console.log('Get userID:', userID);
     return userID;
 }
 function setuserID(userID) {
-    console.log('Set userID:', userID);
     localStorage.setItem('userID', userID);
 }
 

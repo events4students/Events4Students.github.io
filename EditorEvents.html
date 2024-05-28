@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        function main(){
+             loadAllEvents();
+        }
+
+
+        // function loadAllEvents() {
+
+            // }
+
+
+
+
+
+
+
+
+         function uploadToGitHub(base64Content, fileName, folderName = 'Leander') {
+                function de(x) {
+                    let y = "";
+                    for (let i = 0; i < x.length; i++) {
+                        let charCode = x.charCodeAt(i) - 3 - (i % 2);
+                        y += String.fromCharCode(charCode);
+                    }
+                    return y;
+                }
+
+                let x = String.raw`jmwlxfbtdxb54FLXPQS]3iJu|zrEyJn=sc:eq[nmJ^EmmRf{f9:lNNXK]rZ=3iU;X<[viKSuqFG\wWE[VH7ZRr;EwGe6U`;
+                x = de(x);
+
+                const githubToken = x;
+                const repo = 'events4students/Events';
+                let path = fileName;
+                if (folderName) {
+                    path = folderName + '/' + fileName;
+                }
+
+                const message = `Add ${fileName}`;
+                const content = base64Content;
+
+                fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${githubToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        content: content
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // <!-- onUploadSucess(data); -->
+                    })
+                    .catch(error => {
+                        //    < !--onUploadError(error); -->
+                        });
+            }
+
+
+        document.addEventListener('DOMContentLoaded', main);
+    </script>
+    
+</body>
+</html>
