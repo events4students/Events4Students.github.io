@@ -479,10 +479,12 @@
 
         <div id="menuPanel">
             
+                <a href="Editor.html">+Add Event</a>;
+                <a href="Calendar.html">Calendar</a>
                 <a href="Jobs/Pfaffinger.html">Jobs</a>
                 <a href="Mensa/index.html">Mensa</a>
-                <a href="Calendar.html">Calendar</a>
-                <a href="UploadImage.html">Upload Image</a>`;
+              
+        
        
         </div>
 
@@ -991,20 +993,6 @@ function main() {
         filterElement.onchange = function () {
 
             const selectedValue = filterElement.value;
-
-            //  if (selectedValue == '[Jobs]') {
-            //     window.location.href = "Jobs/Pfaffinger.html"
-            //     return;
-            // } else if (selectedValue == '[Mensa]') {
-            //     window.location.href = "Mensa/index.html"
-            //     return;
-            // }else if(selectedValue == '[Calendar]'){
-            //     window.location.href = "Calendar.html"
-            //     return;
-            // } else if (selectedValue == '[Upload Image]') {
-            //     window.location.href = "UploadImage.html"
-            //     return;
-            // }
 
         eventElementAndDateArray.forEach((eventElementAndDate) => {
             const passesFilter = checkIfPassesFilterCallback(eventElementAndDate,eventKeyName, filterElement.value);

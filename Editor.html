@@ -41,8 +41,8 @@
 
 
         background-color: white;
-        width:30vw;
-        /* min-width: 500px; */
+        width:400px;
+        /* min-width: 400px; */
         /* margin: 20px auto; */
         /* padding: 80px 50px; */
         padding: 60px 30px;
@@ -263,6 +263,8 @@
  
         <div id="nameContainer">Name: <input id="name" type="text" ></div>
 
+        <!-- <input id="timeNew" type="datetime-local" name="meeting-time" value="2018-06-12T19:30" min="2018-06-07T00:00" max="2018-06-14T00:00" /> -->
+
         <div id="dateContainer">Date: <input type="date" id="date" ></div>
         <div id="timeStartContainer">Start Time: <input type="time" id="timeStart"></div> <!-- step="900"-->
         <div id="durationContainer">
@@ -388,6 +390,27 @@
             }
 
 
+            // <input id="timeNew" type="datetime-local" name="meeting-time" value="2018-06-12T19:30" min="2018-06-07T00:00" max="2018-06-14T00:00" />
+            //set min date to today and max date to 1 year from now
+
+            // const dateElement = document.getElementById('timeNew');
+
+            // const currentDate = new Date();
+            // const currentDateString = dateToDateString(currentDate);
+            // dateElement.min = currentDateString;
+            // const oneYearFromNow = new Date();
+            // oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+            // const oneYearFromNowString = dateToDateString(oneYearFromNow);
+            // dateElement.max = oneYearFromNowString;
+
+            // dateElement.value = currentDateString;
+            // dateElement.style.display = 'block';
+
+
+
+
+
+
 
 
             const uploadImageInput = document.getElementById('uploadImage');
@@ -503,33 +526,6 @@
                 const fileName = event.name+'.json';
                 uploadToGitHub(base64Json, fileName, username);
 
-
-
-                // console.log(thumbnail.src);
-
-                // const base64Image = thumbnail.src.split(',')[1];
-                    // function handleFile(file) {
-                //         if (file.type.startsWith('image/')) {
-                //             const reader = new FileReader();
-                //             reader.onload = (e) => {
-                //                 const base64Image = e.target.result.split(',')[1];
-                //                 uploadToGitHub(base64Image, file.name);
-                //             };
-                //             reader.readAsDataURL(file);
-                //         } else {
-                //             alert('Please select an image file.');
-                //         }
-                //     }
-                    
-                // if(thumbnailFile){
-                //     uploadToGitHub(thumbnailFile.base64, thumbnailFile.name);
-                // }
-
-                // uploadToGitHub(base64Image, 'thumbnail.jpg');
-
-
-
-
             }
 
         
@@ -589,16 +585,6 @@
                 }else{
                     myPopup('Event uploaded successfully!');
                 }
-
-
-               
-                //  document.body.innerHTML += `<h1>Event uploaded successfully!</h1>`;
-                // if (data.content && data.content.download_url) {
-                //     document.body.style.backgroundColor = "rgb(0,200,0)";
-                //     document.body.innerHTML = `<h1>Image uploaded successfully!</h1><img src="${data.content.download_url}" style="max-width: 100%; height: auto;">`;
-                // } else {
-                //     alert('Error uploading image: ' + JSON.stringify(data));
-                // }
             }
 
             // showCusomPopup('HI');
@@ -623,12 +609,7 @@
                 </div>`;
 
                 const cssElement = document.createElement('style');
-   
-     
-                             // top: 0;
-                // right: 0;
 
-                         // padding: 100px 200px;
                 cssElement.innerHTML = `
                 .popupContainer{
                     position: relative;
@@ -693,21 +674,6 @@
                 const paddedMinutes = minutes.toString().padStart(2, '0');
                 return `${paddedHours}:${paddedMinutes}`;
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
