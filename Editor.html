@@ -6,10 +6,10 @@
 <title>Event Details</title>
 <meta property="og:title" content="Events Deggendorf" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https:
+<meta property="og:url" content="https://events4students.github.io/Editor.html"/>
 <meta property="og:description" content="Events for Students at the THD. Sports, cinema and more.">
-<meta property="og:image" content="https:
-<script src="https:
+<meta property="og:image" content="https://events4students.github.io/images/icons/OG1.jpg" />
+
 <script src="eventsJson.js"></script>
 <script src="main.js" type="text/javascript" charset="utf-8"></script>
     <script src="based/app.js"></script>
@@ -29,6 +29,7 @@
             /* display: flex; */
             /* justify-content: center; */
             /* align-items: center; */
+             overscroll-behavior: none;
 
         }
 
@@ -94,6 +95,7 @@
             padding: 20px 30px;
             font-weight: bold;
             font-size: larger;
+            z-index: 1000;
         }
     #follow-button{
         display: none;
@@ -363,12 +365,9 @@
 
                 'type': type,
                 "location": location,
-               
-
                 'locationMaps': locationMaps,
                 'onlineLink': onlineLink,
                 'duration': duration,
-             
                 'language': language,
                 'registration': registration
 
@@ -653,6 +652,7 @@
             }
 
             function onUploadError(error){
+                 myPopup('Error:', error);
                 console.error('Error:', error);
                 alert('Error uploading image: ' + error.message);
                 
