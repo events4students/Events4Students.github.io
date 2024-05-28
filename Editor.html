@@ -327,7 +327,7 @@
 
         <style>
             #loginContainer{
-                background-color: rgba(255, 16, 255,0.5);
+                background-color: rgb(0, 0, 0);
                 position: fixed;
                 top: 50%;
                 left: 50%;
@@ -381,7 +381,11 @@
         function main(){
 
             username = localStorage.getItem('username');
+            console.log(username);
+    
+
             if (!username) {
+                document.getElementById('loginContainer').style.display = 'flex';
                 document.getElementById('loginBtn').addEventListener('click', () => {
                     username = document.getElementById('username').value;
                     localStorage.setItem('username', username);
@@ -474,7 +478,7 @@
 
             //hide all optional values
             for (const key in optionalValuesDict) {
-                console.log(key+ 'Container');
+                // console.log(key+ 'Container');
                 const element = document.getElementById(key + 'Container');
                 if (element) {
                     element.style.display = 'none';
@@ -584,6 +588,10 @@
                     document.getElementById('thumbnail').src = imageUrl;
                 }else{
                     myPopup('Event uploaded successfully!');
+                    // redirect to https://github.com/events4students/Events
+                    window.location.href = 'https://github.com/events4students/Events';
+
+                    
                 }
             }
 
