@@ -1972,7 +1972,84 @@ Don't miss out on the ultimate Friday party experience! Tag your friends and mak
             "website": "https://www.instagram.com/chao.chao.deggendorf/",
         }
     },
+
+
+
+    {
+        "name": 'Dimensional Gravetekk',
+        "date": "07.06.2024",
+        "timeStart": "21:00",
+        "price": "free",
+        "category": "special",
+        "language": "de+en",
+        "type": "inPerson",
+        "imagePaths": ["dimensionalgravetekk.jpg"],
+        "descriptionLong": {
+        'de':`Tauche ein in eine multidimensionale Erfahrung bei unserer nächsten Hirschmilch-Party im Almrausch: „Dimensional Gravetekk“! Begib dich auf eine Reise jenseits der Grenzen des Bekannten und erlebe die Vereinigung von Schwerelosigkeit und intensivem Basslines in einer epischen Nacht der elektronischen Ekstase.
+
+Begib dich in die tiefen Klangwelten der Gravetekk-Musik und lasse dich von hypnotischen Beats und interdimensionalen Klängen mitreißen. Unsere DJ-Galaxie wird mit einem pulsierenden Mix aus dunklen Basslines, galaktischen Melodien und futuristischen Rhythmen den Raum zum Beben bringen.
+
+Erlebe eine Party, die deine Sinne sprengt und deine Vorstellungskraft übersteigt, während wir gemeinsam die Grenzen des Möglichen überschreiten. Komm und werde Teil einer Nacht, die dich in neue Dimensionen der Feierlichkeit führen wird. Sei bereit für „Dimensional Gravetekk“ im Almrausch – wo die Zeit stillsteht und die Musik die Schwerkraft überwindet!
+
+Am 07.06.24
+——————
+Wo?
+
+Vilshofen an der Donau
+Im Almrausch (1min vom Bahnhof)
+
+https://goo.gl/maps/hMg1Sm6H1wrWpwVr6
+
+——————
+
+Line Up
+
+21:00 - 23:00
+Skumfaq - Tekk
+
+23:00 - 01:00
+I|MindStream|I - Tekk
+
+01:00 - 04:00
+Tryptone & Wølf - Frenchcore/Hardcore
+
+——————
+
+Specials:
+
+Festivalbänder😍
+
+Deko Powerd by :
+Hirschmilch Production
+
+Barbetrieb
+
+Abendkasse 10€ Spende
+
+!!Stay tuned!!
+
+——————
+Linktree
+https://linktr.ee/hirschmilch_production
+
+Bei Fragen wendet euch bitte an
+https://t.me/IMindStreamI
+
+Alle sind ❤️-lich eingeladen!
+
+Euer Hirschmilch Team🦌`
+
+        },
+        "location": {
+            "name": "Vilshofen an der Donau, Im Almrausch (1min vom Bahnhof)",
+            "maps": "https://goo.gl/maps/hMg1Sm6H1wrWpwVr6"
+        },
+        "organizer":
+        {
+            "name": "Hirschmilch Production",
+            "image": "hirschmilch.webp",
+            "website": "https://linktr.ee/hirschmilch_production"
+    },
+}
     
 ];
-
-

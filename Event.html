@@ -41,6 +41,18 @@
             background-color: white;
             font-size: 20px;
         }
+
+        /* body * {
+            margin: 0;
+            padding: 0;
+        } */
+
+    hr{
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0px;
+    }
+
     h1{
         font-size: 30px !important;
         font-weight: bold;
@@ -195,7 +207,9 @@
 
     #images {
         margin: 0px;
-        padding: 0px;
+        /* padding: 0px; */
+        /* padding-top: 20px; */
+        padding-bottom: 50px;
         display: flex;
         justify-content: center;
 
@@ -487,15 +501,10 @@
 
 
                  
-                // const RENDER_NEW_LINE = true;
-                // if(RENDER_NEW_LINE){
-                //     //remove the first new lines
-                //     descriptionLong = descriptionLong.replace(/^\n*/, "");
-                //     descriptionLong = descriptionLong.replace(/\n/g, "<br>");
-                // }
-
+    
 
                 descriptionLong = formatStringBold(descriptionLong);
+                descriptionLong = formatStringPageLines(descriptionLong);
                 descriptionLong = formatStringMakeLinks(descriptionLong);
                 descriptionLong = formatStringRemoveStartNewLine(descriptionLong);
                 descriptionLong = formatStringHTMLShowNewLine(descriptionLong);
@@ -512,6 +521,11 @@
                 function formatStringBold(text){
                     return text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
                 }
+             
+                function formatStringPageLines(text) {
+                    return text.replace(/[-—]{3,}/g, '<hr>');
+                }
+
 
 
                 document.getElementById('descriptionLong').innerHTML = descriptionLong;
