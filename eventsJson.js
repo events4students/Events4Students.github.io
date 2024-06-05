@@ -2090,7 +2090,7 @@ Sei dabei und erlebe mit uns einen unvergesslichen Abend voller Spaß, Bewegung 
         },
         "location": {
             "name": "Donaupark",
-            "maps": "https://goo.gl/maps/hMg1Sm6H1wrWpwVr6"
+            "maps": "https://maps.app.goo.gl/zKrVLeNSkbYqfBRs6"
         },
         "organizer":
         {
