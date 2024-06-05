@@ -2050,6 +2050,54 @@ Euer Hirschmilch Team🦌`
             "image": "hirschmilch.webp",
             "website": "https://linktr.ee/hirschmilch_production"
     },
+},
+
+
+
+
+
+
+    {
+        "name": 'Blade & Bike Night',
+        "date": "21.06.2024",
+        "timeStart": "15:00",
+        "price": "free",
+        "category": "special",
+        "language": "de+en",
+        "type": "inPerson",
+        "imagePaths": ["BladeBikeNight.jpg","BladeBikeNight2.jpg"],
+        "descriptionLong": {
+        'de':`Highlights:
+
+Abwechslungsreiches Rahmenprogramm ab 15:00 Uhr für die ganze Familie
+Start der Biker um 18:30 Uhr, gefolgt von den Bladern um 19:30 Uhr
+Strecke führt durch abgesperrte Straßen von Deggendorf auf ca. 8 Kilometern
+Durchfahrt des B11 Tunnels
+Nach der Rückkehr Party mit DJ-Musik, Getränken und Streetfood bis 23:00 Uhr
+Besonderheiten:
+
+Schuhgarderobe und Absperrmöglichkeiten für Fahrräder vor Ort
+Event offen für alle, inklusive Rollstuhlfahrer
+Einnahmen aus Getränkeverkauf und Spenden gehen an den Nachwuchs der Deggendorf Pflanz als Veranstalter
+Die Teilnahme ist kostenlos und es ist keine Anmeldung erforderlich. Das Ziel ist ein gemeinschaftliches Fahrerlebnis für Groß und Klein.
+
+!! Kopf hoch – Helm auf: Das Tragen eines Helms ist Pflicht !!
+
+Sei dabei und erlebe mit uns einen unvergesslichen Abend voller Spaß, Bewegung und Musik!
+
+`
+
+        },
+        "location": {
+            "name": "Donaupark",
+            "maps": "https://goo.gl/maps/hMg1Sm6H1wrWpwVr6"
+        },
+        "organizer":
+        {
+            "name": "Deggendorf",
+            "image": "deggendorf.png",
+            "website": "https://www.deggendorf.de/veranstaltungen/event/blade-bike-night"
+    },
 }
     
 ];
